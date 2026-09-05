@@ -3,7 +3,7 @@ import { portfolioData } from '../data/portfolioData';
 import { Terminal as TerminalIcon } from 'lucide-react';
 
 export default function Terminal() {
-  const { personal, education, skills, projects, achievements, leaderships, terminalHelp } = portfolioData;
+  const { personal, education, skills, projects, certifications, leaderships, terminalHelp } = portfolioData;
 
   const [input, setInput] = useState('');
   const [history, setHistory] = useState([
@@ -58,13 +58,13 @@ export default function Terminal() {
         });
         break;
 
-      case 'achievements':
-      case 'awards':
-        const acad = achievements.academic.map(a => `🏆 ${a.title} - ${a.details}`).join('\n');
-        const sch = achievements.scholarships.map(s => `🎓 ${s.name} (${s.provider})`).join('\n');
+      case 'certifications':
+      case 'certs':
+      case 'learning':
+        const certList = certifications.map(c => `• [${c.status}] ${c.title}\n  Issuer: ${c.issuer} (${c.targetDate})\n  Track:  ${c.track}\n  Focus:  ${c.skillsCovered.join(', ')}`).join('\n\n');
         newEntries.push({
           type: "output",
-          text: `🌟 ACADEMIC HONORS & AWARDS:\n${acad}\n\n🏛️ SCHOLARSHIPS & GRANTS:\n${sch}`
+          text: `📜 CERTIFICATIONS & LEARNING ROADMAP:\n\n${certList}`
         });
         break;
 
@@ -161,7 +161,7 @@ export default function Terminal() {
     }
   };
 
-  const quickCommands = ['help', 'about', 'education', 'achievements', 'leadership', 'thesis', 'projects', 'cat resume.txt', 'clear'];
+  const quickCommands = ['help', 'about', 'education', 'certifications', 'leadership', 'thesis', 'projects', 'cat resume.txt', 'clear'];
 
   return (
     <section id="terminal" className="py-20 relative bg-white border-t border-slate-200/80">
@@ -244,7 +244,7 @@ export default function Terminal() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder="type a command (e.g. achievements, education, capstone)..."
+                placeholder="type a command (e.g. certifications, skills, capstone)..."
                 className="flex-1 bg-transparent text-slate-100 placeholder-slate-500 focus:outline-none font-mono"
               />
             </div>

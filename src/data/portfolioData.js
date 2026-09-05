@@ -65,24 +65,60 @@ export const portfolioData = {
   stats: [
     { label: "Academic Standing", value: "Dean's List" },
     { label: "Undergraduate Thesis", value: "Lead Programmer" },
-    { label: "Scholarships & Grants", value: "4 Awarded" },
+    { label: "Target Credentials", value: "Cloud & Dev Tracks" },
     { label: "GitHub Repositories", value: "10+" },
   ],
 
-  achievements: {
-    academic: [
-      { title: "Dean’s Lister", details: "Pamantasan ng Cabuyao (S.Y. 2023–2024)", type: "University Honor" },
-      { title: "Best in Project Implementation", details: "CWTS BinBot: Automated Trash Bin Segregation | Pamantasan ng Cabuyao", type: "Project Award" },
-      { title: "With High Honors", details: "Cabuyao Institute of Technology (S.Y. 2021–2022)", type: "Senior High" },
-      { title: "With Honors", details: "Cabuyao Institute of Technology (S.Y. 2022–2023)", type: "Senior High" },
-    ],
-    scholarships: [
-      { name: "Iskolar ng Laguna", provider: "Provincial Government of Laguna", badge: "Provincial Scholar" },
-      { name: "Iskolar ng Bagong Cabuyao", provider: "City Government of Cabuyao", badge: "City Scholar" },
-      { name: "Iskolar ni San Policarpo", provider: "Parish / Community Grant", badge: "Community Scholar" },
-      { name: "EdukCares Beneficiary", provider: "Sangguniang Kabataan ng Barangay Tres", badge: "Youth Grant" },
-    ]
-  },
+  certifications: [
+    {
+      id: "aws-cloud-practitioner",
+      title: "AWS Certified Cloud Practitioner (CLF-C02)",
+      issuer: "Amazon Web Services (AWS)",
+      status: "In Preparation",
+      statusType: "in-prep",
+      targetDate: "Target 2026",
+      category: "Cloud & Infrastructure",
+      description: "Foundational mastery of AWS cloud computing, cloud security, IAM policies, core services (EC2, S3, RDS, Lambda), and scalable cloud architecture.",
+      skillsCovered: ["AWS Core Services", "Cloud Architecture", "IAM & Security", "Serverless Basics"],
+      track: "Active Member of AWS Cloud Club (Pamantasan ng Cabuyao)"
+    },
+    {
+      id: "meta-frontend-cert",
+      title: "Meta Front-End Developer Professional Certificate",
+      issuer: "Meta / Coursera",
+      status: "In Preparation",
+      statusType: "in-prep",
+      targetDate: "Target 2026",
+      category: "Software Engineering",
+      description: "Advanced client-side engineering covering modern React 18, state management, component lifecycles, REST APIs, UX principles, and automated testing.",
+      skillsCovered: ["React 18", "JavaScript ES6+", "Component Architecture", "RESTful APIs", "Responsive UI"],
+      track: "Full-Stack Web Specialization"
+    },
+    {
+      id: "python-pcap",
+      title: "PCAP – Certified Associate in Python Programming",
+      issuer: "Python Institute",
+      status: "Target Roadmap",
+      statusType: "roadmap",
+      targetDate: "Target 2026",
+      category: "Core Programming",
+      description: "Comprehensive certification verifying advanced procedural and OOP programming, data processing algorithms, exception handling, and module design in Python.",
+      skillsCovered: ["OOP Principles", "Algorithm Efficiency", "File Processing", "Data Structures"],
+      track: "NLP & Backend Architecture Base"
+    },
+    {
+      id: "docker-devops-cert",
+      title: "Docker & Containerization Fundamentals",
+      issuer: "Docker / Linux Foundation",
+      status: "Target Roadmap",
+      statusType: "roadmap",
+      targetDate: "Target 2026",
+      category: "DevOps & Tooling",
+      description: "Practical expertise in building container images, multi-container orchestration with Docker Compose, volume persistence, and microservice deployment pipelines.",
+      skillsCovered: ["Docker Compose", "Container Security", "CI/CD Integration", "Microservices"],
+      track: "Full-Stack Deployment & DevOps"
+    }
+  ],
 
   leaderships: [
     {
@@ -249,7 +285,7 @@ export const portfolioData = {
     { cmd: "about", desc: "Display summary about Charles" },
     { cmd: "education", desc: "Show complete educational timeline" },
     { cmd: "thesis", desc: "Display FalsiCode Undergraduate Thesis details" },
-    { cmd: "achievements", desc: "List Dean's List, awards, & scholarships" },
+    { cmd: "certifications", desc: "List future & target industry certifications" },
     { cmd: "leadership", desc: "List ACSS, AWS Cloud Club, & officer roles" },
     { cmd: "skills", desc: "List technical stack & proficiencies" },
     { cmd: "projects", desc: "List real GitHub repositories & live links" },
