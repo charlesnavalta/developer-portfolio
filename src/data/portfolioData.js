@@ -1,6 +1,6 @@
 export const portfolioData = {
   personal: {
-    name: "Charles Darwin Navalta",
+    name: "Charles Navalta",
     fullName: "Charles Darwin Navalta",
     nickname: "Charles",
     role: "Computer Science Student",
