@@ -45,7 +45,7 @@ export default function Projects() {
                   : 'bg-white text-slate-600 hover:text-slate-900 hover:bg-slate-50 border border-slate-200 shadow-sm'
               }`}
             >
-              {category === 'Thesis' ? '🎓 Undergraduate Thesis' : category}
+              {category === 'Thesis' ? 'Undergraduate Thesis' : category}
             </button>
           ))}
         </div>

@@ -191,7 +191,7 @@ export const portfolioData = {
     {
       id: "falsicode-thesis",
       title: "FalsiCode: Code Plagiarism Detection in DSA using AST, N-Grams & TF-IDF",
-      tag: "🎓 Undergraduate Thesis / NLP & Algorithms",
+      tag: "Undergraduate Thesis / NLP & Algorithms",
       category: "Thesis",
       period: "2026 – Present",
       status: "In Progress",
@@ -212,7 +212,7 @@ export const portfolioData = {
     {
       id: "debugging-farm-game",
       title: "DebuggingFarm & Sunberry-Village: Interactive Simulation & Game Systems",
-      tag: "🎮 Game Dev & C# Systems",
+      tag: "Game Dev & C# Systems",
       category: "Software Engineering",
       period: "2026 – Present",
       status: "In Progress",
@@ -233,7 +233,7 @@ export const portfolioData = {
     {
       id: "auto-answer-ext",
       title: "AutoAnswerExt: Chrome Browser Extension & DOM Automation Tool",
-      tag: "⚡ Tooling & Automation",
+      tag: "Tooling & Automation",
       category: "Software Engineering",
       period: "2026",
       status: "Completed",
@@ -254,7 +254,7 @@ export const portfolioData = {
     {
       id: "crafty-corner",
       title: "Crafty-Corner: Creative Handmade & DIY E-Commerce Platform",
-      tag: "🛍️ Full-Stack Web App",
+      tag: "Full-Stack Web App",
       category: "Full-Stack",
       period: "2025 – 2026",
       status: "Completed",
@@ -275,7 +275,7 @@ export const portfolioData = {
     {
       id: "binbot-automated-segregation",
       title: "CWTS BinBot: Automated Trash Bin Segregation System",
-      tag: "🏆 Best in Project Implementation",
+      tag: "Best in Project Implementation",
       category: "Software Engineering",
       period: "2023 – 2024",
       status: "Completed",
