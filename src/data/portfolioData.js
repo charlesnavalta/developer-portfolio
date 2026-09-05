@@ -193,8 +193,8 @@ export const portfolioData = {
       title: "FalsiCode: Code Plagiarism Detection in DSA using AST, N-Grams & TF-IDF",
       tag: "🎓 Undergraduate Thesis / NLP & Algorithms",
       category: "Thesis",
-      status: "Completed",
-      statusNote: "Defended & Deployed Live",
+      status: "In Progress",
+      statusNote: "Active Capstone Development & Live Testing",
       featured: true,
       description: "Undergraduate thesis project at Pamantasan ng Cabuyao: An automated academic source code plagiarism detection system for Data Structures & Algorithms. Combines Abstract Syntax Tree (AST) structural parsing with N-Grams and TF-IDF cosine similarity to detect structural and semantic code plagiarism across student submissions.",
       highlights: [
@@ -253,8 +253,8 @@ export const portfolioData = {
       title: "AutoAnswerExt: Chrome Browser Extension & DOM Automation Tool",
       tag: "⚡ Tooling & Automation",
       category: "Software Engineering",
-      status: "In Progress",
-      statusNote: "Feature Enhancements & Optimization",
+      status: "Completed",
+      statusNote: "Manifest V3 Built & Functional",
       featured: false,
       description: "A high-efficiency Google Chrome browser extension built with Manifest V3. Automates DOM parsing, form interaction, and question-answering workflows using event-driven background service workers and content scripts.",
       highlights: [
