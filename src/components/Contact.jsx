@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { Mail, Send, MapPin, Sparkles, Copy, Check, MessageSquare } from 'lucide-react';
+import { Mail, Send, MapPin, Sparkles, Copy, Check, MessageSquare, Loader2, AlertCircle } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import confetti from 'canvas-confetti';
 
@@ -9,7 +9,9 @@ export default function Contact() {
 
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [copied, setCopied] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(personal.email);
@@ -17,42 +19,47 @@ export default function Contact() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMessage('');
 
-    const subjectText = formData.subject.trim() || `Inquiry from ${formData.name.trim() || 'Portfolio Visitor'}`;
-    const bodyText = `Hi Charles,\n\n${formData.message.trim()}\n\n---\nSender Name: ${formData.name.trim()}\nSender Email: ${formData.email.trim()}`;
+    try {
+      const response = await fetch('https://formspree.io/f/myeyprpo', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          subject: formData.subject.trim() || 'Portfolio Inquiry',
+          message: formData.message.trim()
+        })
+      });
 
-    const subjectEncoded = encodeURIComponent(subjectText);
-    const bodyEncoded = encodeURIComponent(bodyText);
-
-    const mailtoUrl = `mailto:${personal.email}?subject=${subjectEncoded}&body=${bodyEncoded}`;
-
-    // Open user's default email client (Gmail App / Apple Mail / Outlook)
-    window.location.href = mailtoUrl;
-
-    setSubmitted(true);
-    confetti({
-      particleCount: 80,
-      spread: 70,
-      origin: { y: 0.7 }
-    });
-
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 6000);
-  };
-
-  const handleOpenGmailWeb = (e) => {
-    e.preventDefault();
-    const subjectText = formData.subject.trim() || `Inquiry from ${formData.name.trim() || 'Portfolio Visitor'}`;
-    const bodyText = `Hi Charles,\n\n${formData.message.trim()}\n\n---\nSender Name: ${formData.name.trim()}\nSender Email: ${formData.email.trim()}`;
-
-    const subjectEncoded = encodeURIComponent(subjectText);
-    const bodyEncoded = encodeURIComponent(bodyText);
-
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${personal.email}&su=${subjectEncoded}&body=${bodyEncoded}`;
-    window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+      if (response.ok) {
+        setSubmitted(true);
+        confetti({
+          particleCount: 80,
+          spread: 70,
+          origin: { y: 0.7 }
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        const data = await response.json().catch(() => ({}));
+        if (data && data.errors && data.errors.length > 0) {
+          setErrorMessage(data.errors.map(err => err.message).join(', '));
+        } else {
+          setErrorMessage(`Unable to deliver message right now. You can also email directly at ${personal.email}`);
+        }
+      }
+    } catch (err) {
+      setErrorMessage(`Network error occurred. Please check your connection or email directly at ${personal.email}`);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -95,7 +102,7 @@ export default function Contact() {
                   </div>
                   <button
                     onClick={handleCopyEmail}
-                    className="p-1.5 rounded-xl bg-white border border-slate-200 hover:bg-slate-100 text-slate-600 transition-colors shadow-xs"
+                    className="p-1.5 rounded-xl bg-white border border-slate-200 hover:bg-slate-100 text-slate-600 transition-colors shadow-xs cursor-pointer"
                     title="Copy Email"
                   >
                     {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
@@ -149,20 +156,22 @@ export default function Contact() {
             <div className="glass-panel p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm">
               
               {submitted ? (
-                <div className="py-12 text-center space-y-3 animate-fadeIn">
-                  <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
-                    <Check className="w-6 h-6" />
+                <div className="py-12 text-center space-y-4 animate-fadeIn">
+                  <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-xs">
+                    <Check className="w-7 h-7" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 font-mono">Opening Your Email App...</h3>
-                  <p className="text-xs text-slate-600 max-w-sm mx-auto">
-                    Your message and details have been pre-filled. Just click <strong>Send</strong> in your Gmail or email app to send it directly to <strong>{personal.email}</strong>.
-                  </p>
+                  <div className="space-y-1">
+                    <h3 className="text-xl font-bold text-slate-900 font-mono">Message Sent Successfully!</h3>
+                    <p className="text-xs text-slate-600 max-w-sm mx-auto leading-relaxed">
+                      Thank you for reaching out. Your message has been delivered directly to Charles's inbox.
+                    </p>
+                  </div>
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
-                    className="mt-2 text-xs font-mono text-blue-600 hover:text-blue-700 underline cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-mono font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors cursor-pointer"
                   >
-                    Back to Form
+                    <span>Send Another Message</span>
                   </button>
                 </div>
               ) : (
@@ -222,24 +231,30 @@ export default function Contact() {
                     />
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-2.5 pt-1">
-                    <button
-                      type="button"
-                      onClick={handleOpenGmailWeb}
-                      className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-xs text-white bg-red-600 hover:bg-red-700 shadow-md shadow-red-500/20 transition-all cursor-pointer font-mono"
-                    >
-                      <Mail className="w-4 h-4" />
-                      <span>SEND VIA GMAIL</span>
-                    </button>
+                  {errorMessage && (
+                    <div className="flex items-center gap-2 p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs">
+                      <AlertCircle className="w-4 h-4 shrink-0 text-red-500" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
 
-                    <button
-                      type="submit"
-                      className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-xs text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 hover:border-slate-400 shadow-xs transition-all cursor-pointer font-mono"
-                    >
-                      <Send className="w-3.5 h-3.5 text-blue-600" />
-                      <span>OTHER MAIL APPS</span>
-                    </button>
-                  </div>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-xs text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-75 disabled:cursor-not-allowed shadow-md shadow-blue-500/20 transition-all cursor-pointer font-mono"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>SENDING MESSAGE...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-3.5 h-3.5" />
+                        <span>SEND MESSAGE</span>
+                      </>
+                    )}
+                  </button>
                 </form>
               )}
 
