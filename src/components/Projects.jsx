@@ -181,14 +181,6 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Pro Tip Callout for Customizing Projects */}
-        <div className="mt-12 p-4 rounded-2xl bg-blue-50/70 border border-blue-200/80 flex items-start gap-3 text-xs text-slate-700 max-w-3xl mx-auto shadow-sm">
-          <Info className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-          <p>
-            <strong className="text-slate-900">How to add your finished GitHub projects:</strong> Simply open <code className="text-blue-700 bg-white px-1.5 py-0.5 rounded border border-blue-200">src/data/portfolioData.js</code> and update the title, GitHub repository URL, live preview link, and tech stack in the <code className="text-blue-700 font-mono">projects</code> list!
-          </p>
-        </div>
-
       </div>
 
       {/* Project Deep-dive Modal */}
