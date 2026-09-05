@@ -25,21 +25,25 @@ export default function Contact() {
     setErrorMessage('');
 
     try {
-      const response = await fetch('https://formspree.io/f/myeyprpo', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
+          access_key: '487e44b8-b167-4340-a7c5-651c913b79c0',
           name: formData.name.trim(),
           email: formData.email.trim(),
-          subject: formData.subject.trim() || 'Portfolio Inquiry',
-          message: formData.message.trim()
+          subject: formData.subject.trim() || `Portfolio Inquiry from ${formData.name.trim()}`,
+          message: formData.message.trim(),
+          from_name: `${formData.name.trim()} (Portfolio Contact)`
         })
       });
 
-      if (response.ok) {
+      const data = await response.json().catch(() => ({}));
+
+      if (response.ok && data.success) {
         setSubmitted(true);
         confetti({
           particleCount: 80,
@@ -48,12 +52,7 @@ export default function Contact() {
         });
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
-        const data = await response.json().catch(() => ({}));
-        if (data && data.errors && data.errors.length > 0) {
-          setErrorMessage(data.errors.map(err => err.message).join(', '));
-        } else {
-          setErrorMessage(`Unable to deliver message right now. You can also email directly at ${personal.email}`);
-        }
+        setErrorMessage(data.message || `Unable to deliver message right now. You can also email directly at ${personal.email}`);
       }
     } catch (err) {
       setErrorMessage(`Network error occurred. Please check your connection or email directly at ${personal.email}`);
