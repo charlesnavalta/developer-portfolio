@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { Mail, Send, MapPin, Sparkles, Copy, Check, MessageSquare } from 'lucide-react';
+import { Mail, Send, MapPin, Sparkles, Copy, Check, MessageSquare, Loader2, AlertCircle } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import confetti from 'canvas-confetti';
 
@@ -9,7 +9,9 @@ export default function Contact() {
 
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [copied, setCopied] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(personal.email);
@@ -17,18 +19,50 @@ export default function Contact() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    confetti({
-      particleCount: 80,
-      spread: 70,
-      origin: { y: 0.7 }
-    });
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 4000);
+    setIsSubmitting(true);
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('https://formspree.io/f/myeyprpo', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        confetti({
+          particleCount: 80,
+          spread: 70,
+          origin: { y: 0.7 }
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 5000);
+      } else {
+        const data = await response.json().catch(() => ({}));
+        if (data && data.errors && data.errors.length > 0) {
+          setErrorMessage(data.errors.map(err => err.message).join(', '));
+        } else {
+          setErrorMessage('Unable to send message right now. Please email directly at ' + personal.email);
+        }
+      }
+    } catch (err) {
+      setErrorMessage('Network error occurred. Please try again or email directly at ' + personal.email);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -191,12 +225,29 @@ export default function Contact() {
                     />
                   </div>
 
+                  {errorMessage && (
+                    <div className="flex items-center gap-2 p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs">
+                      <AlertCircle className="w-4 h-4 shrink-0 text-red-500" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-xs text-white bg-blue-600 hover:bg-blue-700 shadow-md shadow-blue-500/20 transition-all cursor-pointer font-mono"
+                    disabled={isSubmitting}
+                    className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-xs text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-70 disabled:cursor-not-allowed shadow-md shadow-blue-500/20 transition-all cursor-pointer font-mono"
                   >
-                    <Send className="w-3.5 h-3.5" />
-                    <span>SEND MESSAGE</span>
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>SENDING MESSAGE...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-3.5 h-3.5" />
+                        <span>SEND MESSAGE</span>
+                      </>
+                    )}
                   </button>
                 </form>
               )}
