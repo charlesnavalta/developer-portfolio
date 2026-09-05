@@ -91,7 +91,7 @@ export default function Terminal() {
       case 'projects':
         newEntries.push({
           type: "output",
-          text: projects.map(p => `• [${p.status || 'Active'}] ${p.title}\n  Category: ${p.category} | Tag: ${p.tag}\n  Tech:     ${p.techStack.join(', ')}\n  GitHub:   ${p.github}`).join('\n\n')
+          text: projects.map(p => `• [${p.status || 'Active'}] ${p.title} (${p.period || '2026'})\n  Category: ${p.category} | Tag: ${p.tag}\n  Tech:     ${p.techStack.join(', ')}\n  GitHub:   ${p.github}`).join('\n\n')
         });
         break;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, ExternalLink, CheckCircle2, Sparkles } from 'lucide-react';
+import { X, ExternalLink, CheckCircle2, Sparkles, Calendar } from 'lucide-react';
 import { GithubIcon } from './Icons';
 
 export default function ProjectModal({ project, onClose }) {
@@ -17,12 +17,19 @@ export default function ProjectModal({ project, onClose }) {
           <X className="w-5 h-5" />
         </button>
 
-        {/* Project Tag & Title */}
+        {/* Project Tag, Period & Status */}
         <div className="space-y-2 mb-4">
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-block px-3 py-1 rounded-full text-xs font-mono font-semibold bg-blue-50 text-blue-700 border border-blue-200">
               {project.tag}
             </span>
+
+            {project.period && (
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                <Calendar className="w-3.5 h-3.5 text-slate-500" />
+                <span>{project.period}</span>
+              </span>
+            )}
             
             {project.status === 'Completed' ? (
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">

@@ -186,13 +186,14 @@ export const portfolioData = {
     ]
   },
 
-  // Highlighted Projects
+  // Highlighted Projects (Ordered by Date: Recent to Earlier)
   projects: [
     {
       id: "falsicode-thesis",
       title: "FalsiCode: Code Plagiarism Detection in DSA using AST, N-Grams & TF-IDF",
       tag: "🎓 Undergraduate Thesis / NLP & Algorithms",
       category: "Thesis",
+      period: "2026 – Present",
       status: "In Progress",
       statusNote: "Active Capstone Development & Live Testing",
       featured: true,
@@ -209,50 +210,32 @@ export const portfolioData = {
       stats: { metric: "Live Platform", value: "FalsiCode" }
     },
     {
-      id: "binbot-automated-segregation",
-      title: "CWTS BinBot: Automated Trash Bin Segregation System",
-      tag: "🏆 Best in Project Implementation",
+      id: "debugging-farm-game",
+      title: "DebuggingFarm & Sunberry-Village: Interactive Simulation & Game Systems",
+      tag: "🎮 Game Dev & C# Systems",
       category: "Software Engineering",
-      status: "Completed",
-      statusNote: "Project Implemented & Awarded",
-      featured: true,
-      description: "Award-winning civic automation system developed under the NSTP CWTS program at Pamantasan ng Cabuyao. Features automated sensor classification and mechanical segregation for institutional waste management.",
+      period: "2026 – Present",
+      status: "In Progress",
+      statusNote: "Active Systems Exploration",
+      featured: false,
+      description: "Interactive game mechanics, laboratory simulation games, and extensible C# modding systems created with the Unity Engine and .NET game frameworks.",
       highlights: [
-        "Awarded 'Best in Project Implementation' by the NSTP Civic Welfare Training Service department at Pamantasan ng Cabuyao.",
-        "Led production engineering, sensor integration logic, and project demonstration.",
-        "Designed to promote campus environmental sustainability through automated waste separation."
+        "Programmed object-oriented player controllers, physics triggers, and state machines in C#.",
+        "Implemented custom event listeners and content injection pipelines in Unity and modding frameworks.",
+        "Designed modular architecture for game asset management and laboratory gameplay scenarios.",
       ],
-      techStack: ["Sensors & Microcontrollers", "Automation Logic", "System Integration", "Hardware/Software"],
-      github: "https://github.com/charlesnavalta",
-      demo: "https://github.com/charlesnavalta",
-      image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80",
-      stats: { metric: "Recognition", value: "Best in Project" }
-    },
-    {
-      id: "crafty-corner",
-      title: "Crafty-Corner: Creative Handmade & DIY E-Commerce Platform",
-      tag: "🛍️ Full-Stack Web App",
-      category: "Full-Stack",
-      status: "Completed",
-      statusNote: "Core Architecture Finished",
-      featured: true,
-      description: "A modern, responsive e-commerce web platform designed for handmade crafts and DIY kits. Features interactive product catalogs, real-time cart state management, checkout flows, and modular component architecture.",
-      highlights: [
-        "Constructed responsive SPA UI using React 18 and component-driven state architecture.",
-        "Implemented interactive cart calculations, checkout workflows, and dynamic item management.",
-        "Crafted custom CSS design tokens for an intuitive shopping experience across mobile and desktop.",
-      ],
-      techStack: ["React 18", "JavaScript (ES6+)", "CSS3", "Component Architecture"],
-      github: "https://github.com/charlesnavalta/Crafty-Corner",
-      demo: "https://github.com/charlesnavalta/Crafty-Corner",
-      image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=80",
-      stats: { metric: "Frontend", value: "React 18 SPA" }
+      techStack: ["Unity Engine", "C#", ".NET", "Game Physics", "Object-Oriented Design"],
+      github: "https://github.com/charlesnavalta/DebuggingFarm",
+      demo: "https://github.com/charlesnavalta/DebuggingFarm",
+      image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
+      stats: { metric: "Platform", value: "Unity & C#" }
     },
     {
       id: "auto-answer-ext",
       title: "AutoAnswerExt: Chrome Browser Extension & DOM Automation Tool",
       tag: "⚡ Tooling & Automation",
       category: "Software Engineering",
+      period: "2026",
       status: "Completed",
       statusNote: "Manifest V3 Built & Functional",
       featured: false,
@@ -269,24 +252,46 @@ export const portfolioData = {
       stats: { metric: "Standard", value: "Manifest V3" }
     },
     {
-      id: "debugging-farm-game",
-      title: "DebuggingFarm & Sunberry-Village: Interactive Simulation & Game Systems",
-      tag: "🎮 Game Dev & C# Systems",
-      category: "Software Engineering",
-      status: "In Progress",
-      statusNote: "Active Systems Exploration",
-      featured: false,
-      description: "Interactive game mechanics, laboratory simulation games, and extensible C# modding systems created with the Unity Engine and .NET game frameworks.",
+      id: "crafty-corner",
+      title: "Crafty-Corner: Creative Handmade & DIY E-Commerce Platform",
+      tag: "🛍️ Full-Stack Web App",
+      category: "Full-Stack",
+      period: "2025 – 2026",
+      status: "Completed",
+      statusNote: "Core Architecture Finished",
+      featured: true,
+      description: "A modern, responsive e-commerce web platform designed for handmade crafts and DIY kits. Features interactive product catalogs, real-time cart state management, checkout flows, and modular component architecture.",
       highlights: [
-        "Programmed object-oriented player controllers, physics triggers, and state machines in C#.",
-        "Implemented custom event listeners and content injection pipelines in Unity and modding frameworks.",
-        "Designed modular architecture for game asset management and laboratory gameplay scenarios.",
+        "Constructed responsive SPA UI using React 18 and component-driven state architecture.",
+        "Implemented interactive cart calculations, checkout workflows, and dynamic item management.",
+        "Crafted custom CSS design tokens for an intuitive shopping experience across mobile and desktop.",
       ],
-      techStack: ["Unity Engine", "C#", ".NET", "Game Physics", "Object-Oriented Design"],
-      github: "https://github.com/charlesnavalta/DebuggingFarm",
-      demo: "https://github.com/charlesnavalta/DebuggingFarm",
-      image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
-      stats: { metric: "Platform", value: "Unity & C#" }
+      techStack: ["React 18", "JavaScript (ES6+)", "CSS3", "Component Architecture"],
+      github: "https://github.com/charlesnavalta/Crafty-Corner",
+      demo: "https://github.com/charlesnavalta/Crafty-Corner",
+      image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=80",
+      stats: { metric: "Frontend", value: "React 18 SPA" }
+    },
+    {
+      id: "binbot-automated-segregation",
+      title: "CWTS BinBot: Automated Trash Bin Segregation System",
+      tag: "🏆 Best in Project Implementation",
+      category: "Software Engineering",
+      period: "2023 – 2024",
+      status: "Completed",
+      statusNote: "Project Implemented & Awarded",
+      featured: true,
+      description: "Award-winning civic automation system developed under the NSTP CWTS program at Pamantasan ng Cabuyao. Features automated sensor classification and mechanical segregation for institutional waste management.",
+      highlights: [
+        "Awarded 'Best in Project Implementation' by the NSTP Civic Welfare Training Service department at Pamantasan ng Cabuyao.",
+        "Led production engineering, sensor integration logic, and project demonstration.",
+        "Designed to promote campus environmental sustainability through automated waste separation."
+      ],
+      techStack: ["Sensors & Microcontrollers", "Automation Logic", "System Integration", "Hardware/Software"],
+      github: "https://github.com/charlesnavalta",
+      demo: "https://github.com/charlesnavalta",
+      image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80",
+      stats: { metric: "Recognition", value: "Best in Project" }
     }
   ],
 

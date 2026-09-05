@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { Sparkles, ExternalLink, ArrowUpRight, Info } from 'lucide-react';
+import { Sparkles, ExternalLink, ArrowUpRight, Info, Calendar } from 'lucide-react';
 import { GithubIcon } from './Icons';
 import ProjectModal from './ProjectModal';
 
@@ -89,11 +89,22 @@ export default function Projects() {
               {/* Card Body */}
               <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-2">
-                  {/* Category & Status Indicator Strip */}
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="text-[10px] sm:text-[11px] font-mono font-semibold text-blue-600 uppercase tracking-wider">
-                      {project.category}
-                    </span>
+                  {/* Category, Date & Status Indicator Strip */}
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] sm:text-[11px] font-mono font-semibold text-blue-600 uppercase tracking-wider">
+                        {project.category}
+                      </span>
+                      {project.period && (
+                        <>
+                          <span className="text-slate-300">•</span>
+                          <span className="inline-flex items-center gap-1 text-[11px] font-mono text-slate-500">
+                            <Calendar className="w-3 h-3 text-slate-400" />
+                            <span>{project.period}</span>
+                          </span>
+                        </>
+                      )}
+                    </div>
                     
                     {project.status === 'Completed' ? (
                       <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
