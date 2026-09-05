@@ -25,6 +25,10 @@ export default function Contact() {
     setErrorMessage('');
 
     try {
+      const senderName = formData.name.trim();
+      const senderEmail = formData.email.trim();
+      const userSubject = formData.subject.trim() || 'General Inquiry';
+
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -33,11 +37,13 @@ export default function Contact() {
         },
         body: JSON.stringify({
           access_key: '487e44b8-b167-4340-a7c5-651c913b79c0',
-          name: formData.name.trim(),
-          email: formData.email.trim(),
-          subject: formData.subject.trim() || `Portfolio Inquiry from ${formData.name.trim()}`,
+          name: senderName,
+          email: senderEmail,
+          replyto: senderEmail,
+          from_name: `${senderName} (Portfolio)`,
+          subject: `[Portfolio Contact] ${userSubject} — from ${senderName}`,
           message: formData.message.trim(),
-          from_name: `${formData.name.trim()} (Portfolio Contact)`
+          botcheck: ''
         })
       });
 
@@ -206,12 +212,26 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  <div className="space-y-1">
-                    <label className="text-xs font-medium text-slate-700">Subject</label>
+                  <div className="space-y-1.5">
+                    <div className="flex items-center justify-between">
+                      <label className="text-xs font-medium text-slate-700">Subject</label>
+                      <div className="hidden sm:flex gap-1.5">
+                        {["Job Opportunity", "Project Collaboration", "General Inquiry"].map((preset) => (
+                          <button
+                            key={preset}
+                            type="button"
+                            onClick={() => setFormData({ ...formData, subject: preset })}
+                            className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-100 hover:bg-blue-50 text-slate-600 hover:text-blue-700 border border-slate-200 hover:border-blue-200 transition-colors cursor-pointer"
+                          >
+                            {preset}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
                     <input
                       type="text"
                       required
-                      placeholder="Opportunity / Project Collaboration"
+                      placeholder="e.g., Job Opportunity / Project Collaboration"
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 shadow-xs transition-colors"
