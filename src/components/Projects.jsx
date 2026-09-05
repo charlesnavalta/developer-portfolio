@@ -34,12 +34,12 @@ export default function Projects() {
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+        <div className="flex items-center justify-start sm:justify-center gap-2 mb-10 sm:mb-12 overflow-x-auto no-scrollbar pb-2 sm:pb-0 px-1">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 rounded-xl text-xs font-semibold font-mono transition-all cursor-pointer ${
+              className={`px-3.5 sm:px-4 py-2 rounded-xl text-xs font-semibold font-mono transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                 activeCategory === category
                   ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20 scale-105'
                   : 'bg-white text-slate-600 hover:text-slate-900 hover:bg-slate-50 border border-slate-200 shadow-sm'
@@ -67,19 +67,19 @@ export default function Projects() {
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent" />
                 
-                {/* Tag Badge */}
-                <div className="absolute top-3 left-3">
-                  <span className="px-3 py-1 rounded-lg text-[11px] font-mono font-semibold bg-white/95 text-blue-700 border border-blue-200 shadow-sm backdrop-blur-sm">
+                {/* Tag Badge (Top Left) */}
+                <div className="absolute top-2.5 sm:top-3 left-2.5 sm:left-3 max-w-[70%]">
+                  <span className="inline-block px-2.5 sm:px-3 py-1 rounded-lg text-[10px] sm:text-[11px] font-mono font-semibold bg-white/95 text-blue-700 border border-blue-200 shadow-sm backdrop-blur-sm truncate">
                     {project.tag}
                   </span>
                 </div>
 
-                {/* Metric Badge */}
+                {/* Metric Badge (Bottom Right to eliminate any collision) */}
                 {project.stats && (
-                  <div className="absolute top-3 right-3">
-                    <span className="px-2.5 py-1 rounded-lg text-[11px] font-mono font-bold bg-slate-900/90 text-white backdrop-blur-sm shadow-sm">
+                  <div className="absolute bottom-2.5 sm:bottom-3 right-2.5 sm:right-3 max-w-[70%]">
+                    <span className="inline-block px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-mono font-bold bg-slate-900/90 text-white border border-slate-700/50 backdrop-blur-md shadow-sm truncate">
                       {project.stats.metric}: {project.stats.value}
                     </span>
                   </div>
@@ -87,14 +87,14 @@ export default function Projects() {
               </div>
 
               {/* Card Body */}
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-2">
                   <h3
                     onClick={() => setSelectedProject(project)}
-                    className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors cursor-pointer flex items-center justify-between"
+                    className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors cursor-pointer flex items-center justify-between"
                   >
                     <span>{project.title}</span>
-                    <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-blue-600" />
+                    <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-blue-600 shrink-0" />
                   </h3>
                   
                   <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">
@@ -103,11 +103,11 @@ export default function Projects() {
                 </div>
 
                 {/* Tech Stack Pills */}
-                <div className="flex flex-wrap gap-1.5 pt-2">
+                <div className="flex flex-wrap gap-1.5 pt-1">
                   {project.techStack.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-2.5 py-0.5 rounded-md text-[11px] font-mono bg-slate-100 text-slate-700 border border-slate-200"
+                      className="px-2.5 py-0.5 rounded-md text-[10px] sm:text-[11px] font-mono bg-slate-100 text-slate-700 border border-slate-200"
                     >
                       {tech}
                     </span>
@@ -115,8 +115,8 @@ export default function Projects() {
                 </div>
 
                 {/* Card Footer Actions */}
-                <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                  <div className="flex items-center gap-3">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-4 border-t border-slate-100">
+                  <div className="flex items-center gap-4">
                     <a
                       href={project.github}
                       target="_blank"
@@ -141,7 +141,7 @@ export default function Projects() {
 
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="text-xs text-blue-600 hover:text-blue-700 font-semibold cursor-pointer"
+                    className="text-xs text-blue-600 hover:text-blue-700 font-semibold cursor-pointer text-left sm:text-right"
                   >
                     Details & Architecture →
                   </button>

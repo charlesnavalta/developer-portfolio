@@ -39,9 +39,9 @@ export default function Skills() {
         </div>
 
         {/* Filter Controls & Search */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10 max-w-4xl mx-auto">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 mb-10 max-w-4xl mx-auto">
           {/* Category Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-1.5 bg-white p-1.5 rounded-2xl border border-slate-200 shadow-sm">
+          <div className="flex items-center gap-1.5 bg-white p-1.5 rounded-2xl border border-slate-200 shadow-sm overflow-x-auto no-scrollbar max-w-full">
             {categories.map((cat) => {
               const Icon = cat.icon;
               const isActive = activeTab === cat.id;
@@ -49,13 +49,13 @@ export default function Skills() {
                 <button
                   key={cat.id}
                   onClick={() => setActiveTab(cat.id)}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-all cursor-pointer ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                     isActive
                       ? 'bg-blue-600 text-white font-semibold shadow-sm'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                   }`}
                 >
-                  <Icon className="w-3.5 h-3.5" />
+                  <Icon className="w-3.5 h-3.5 shrink-0" />
                   <span>{cat.label}</span>
                 </button>
               );
@@ -70,7 +70,7 @@ export default function Skills() {
               placeholder="Search tech (e.g. Python, React)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white border border-slate-200 rounded-xl pl-9 pr-3 py-1.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500 shadow-sm transition-colors"
+              className="w-full bg-white border border-slate-200 rounded-xl pl-9 pr-3 py-2 sm:py-1.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500 shadow-sm transition-colors"
             />
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function Skills() {
           
           {/* Card 1: Core Programming Languages with realistic academic/project ratings */}
           {(activeTab === 'all' || activeTab === 'languages') && (
-            <div className="glass-panel p-6 rounded-2xl space-y-4 bg-white">
+            <div className="glass-panel p-5 sm:p-6 rounded-2xl space-y-4 bg-white">
               <div className="flex items-center gap-2 pb-2 border-b border-slate-100 text-blue-600">
                 <Code2 className="w-5 h-5" />
                 <h3 className="font-mono font-bold text-sm text-slate-900 uppercase tracking-wider">Languages</h3>
@@ -90,14 +90,14 @@ export default function Skills() {
                   .filter(l => matchesSearch(l.name))
                   .map((lang, idx) => (
                     <div key={idx} className="space-y-1.5">
-                      <div className="flex justify-between items-center text-xs">
-                        <div className="flex items-center gap-1.5">
-                          <span className="font-semibold text-slate-800">{lang.name}</span>
-                          <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-500 font-mono">
+                      <div className="flex justify-between items-start sm:items-center text-xs gap-2">
+                        <div className="flex flex-wrap items-center gap-1.5 min-w-0">
+                          <span className="font-semibold text-slate-800 truncate">{lang.name}</span>
+                          <span className="text-[9px] sm:text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-500 font-mono shrink-0">
                             {lang.levelLabel}
                           </span>
                         </div>
-                        <span className="text-blue-600 font-mono text-xs font-semibold">{lang.level}%</span>
+                        <span className="text-blue-600 font-mono text-xs font-semibold shrink-0">{lang.level}%</span>
                       </div>
                       <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
                         <div
