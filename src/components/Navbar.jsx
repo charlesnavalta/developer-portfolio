@@ -51,7 +51,7 @@ export default function Navbar() {
               <span className="text-blue-600">.cs</span>
             </span>
             <span className="text-[11px] text-slate-500 font-mono -mt-1">
-              Class of 2026
+              Class of 2027
             </span>
           </div>
         </a>

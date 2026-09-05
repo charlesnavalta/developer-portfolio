@@ -6,7 +6,7 @@ export const portfolioData = {
     role: "Computer Science Student",
     subRoles: ["Software Engineer", "AI & NLP Enthusiast", "Full-Stack Developer"],
     tagline: "Passionate about continuous learning, algorithmic problem-solving, and engineering scalable software that solves real-world challenges.",
-    bio: "4th-year Computer Science student at the University of Cabuyao (Pamantasan ng Cabuyao) and creator/lead programmer of FalsiCode, my undergraduate thesis. I'm passionate about software engineering, NLP, and algorithmic problem-solving, with hands-on experience building practical solutions like CWTS BinBot (civic automation) and FalsiCode (academic NLP). I'm driven to keep learning and building software that solves real-world problems.",
+    bio: "Computer Science student at the University of Cabuyao (Pamantasan ng Cabuyao) and creator/lead programmer of FalsiCode, my undergraduate thesis. I'm passionate about software engineering, NLP, and algorithmic problem-solving, with hands-on experience building practical solutions like CWTS BinBot (civic automation) and FalsiCode (academic NLP). I'm driven to keep learning and building software that solves real-world problems.",
     email: "charlesdarwinnavalta@gmail.com",
     github: "https://github.com/charlesnavalta",
     linkedin: "https://www.linkedin.com/in/charles-darwin-navalta-a908623b1/",
@@ -19,7 +19,7 @@ export const portfolioData = {
   education: {
     degree: "Bachelor of Science in Computer Science",
     university: "University of Cabuyao (Pamantasan ng Cabuyao)",
-    gradYear: "Class of 2026 (4th Year Student)",
+    gradYear: "Class of 2027",
     honors: "Dean's Lister (S.Y. 2023–2024)",
     gpa: "Dean's List Standing",
     coursework: [
@@ -37,7 +37,7 @@ export const portfolioData = {
         level: "College / Tertiary",
         institution: "University of Cabuyao (Pamantasan ng Cabuyao)",
         program: "Bachelor of Science in Computer Science",
-        period: "2022 – Present (4th Year Student)",
+        period: "2023 – Present (Class of 2027)",
         honors: "Dean's Lister (S.Y. 2023–2024)"
       },
       {
