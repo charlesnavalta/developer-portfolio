@@ -63,7 +63,7 @@ export const portfolioData = {
   },
 
   stats: [
-    { label: "Academic Standing", value: "Dean's List" },
+    { label: "Core Focus", value: "Software & NLP" },
     { label: "Undergraduate Thesis", value: "Lead Programmer" },
     { label: "Active Project Builds", value: "5+ Systems" },
     { label: "GitHub Repositories", value: "10+" },
