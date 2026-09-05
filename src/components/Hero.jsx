@@ -27,17 +27,6 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Compact Status Badge */}
-        <div className="flex items-center justify-center mb-5 sm:mb-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-emerald-200 text-emerald-700 text-xs font-mono shadow-xs whitespace-nowrap">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span className="font-semibold">Open to Work</span>
-          </div>
-        </div>
-
         {/* Hero Main Content */}
         <div className="text-center max-w-4xl mx-auto space-y-5 sm:space-y-6">
 
