@@ -1,6 +1,6 @@
 import React from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { Mail, ArrowRight, Download, Terminal, GraduationCap } from 'lucide-react';
+import { Mail, ArrowRight, Download, Terminal } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import confetti from 'canvas-confetti';
 
@@ -27,21 +27,21 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Status Badge */}
-        <div className="flex items-center justify-center mb-5">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-emerald-200 text-emerald-700 text-xs font-mono shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-            <span className="font-semibold">{personal.statusText}</span>
+        {/* Compact Status & Education Badge */}
+        <div className="flex items-center justify-center mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-emerald-200/80 text-xs font-mono shadow-xs">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="font-semibold text-emerald-700">Open to Work</span>
+            <span className="text-slate-300">•</span>
+            <span className="text-slate-600 font-medium">BS Computer Science (2026)</span>
           </div>
         </div>
 
         {/* Hero Main Content */}
         <div className="text-center max-w-4xl mx-auto space-y-5 sm:space-y-6">
-          
-          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 text-[11px] sm:text-xs font-mono shadow-xs max-w-full">
-            <GraduationCap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600 shrink-0" />
-            <span className="truncate">{education.university} • {education.gradYear}</span>
-          </div>
 
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.2] sm:leading-[1.15]">
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 bg-clip-text text-transparent">{personal.name}</span>
