@@ -6,7 +6,7 @@ export const portfolioData = {
     role: "Graduating Computer Science Student",
     subRoles: ["Software Engineer", "AI & NLP Enthusiast", "Full-Stack Developer"],
     tagline: "4th Year Computer Science Student at Pamantasan ng Cabuyao | Passionate about continuous learning, problem solving, and building scalable software.",
-    bio: "4th-year Computer Science student at the University of Cabuyao (Pamantasan ng Cabuyao) with a strong enthusiasm for continuous learning and technological exploration. Driven by curiosity and a growth mindset, I enjoy diving deep into software engineering, Natural Language Processing (NLP), and algorithmic problem solving. Creator and lead programmer of FalsiCode (Undergraduate Thesis).",
+    bio: "4th-year Computer Science student at the University of Cabuyao (Pamantasan ng Cabuyao) and creator/lead programmer of FalsiCode, my undergraduate thesis. I'm passionate about software engineering, NLP, and algorithmic problem-solving, with hands-on experience building practical solutions like CWTS BinBot (civic automation) and FalsiCode (academic NLP). I'm driven to keep learning and building software that solves real-world problems.",
     email: "charlesdarwinnavalta@gmail.com",
     github: "https://github.com/charlesnavalta",
     linkedin: "https://www.linkedin.com/in/charles-darwin-navalta-a908623b1/",

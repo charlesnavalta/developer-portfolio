@@ -36,10 +36,6 @@ export default function About() {
                 {personal.bio}
               </p>
 
-              <p className="text-sm text-slate-600 leading-relaxed">
-                From building civic automation systems like <strong>CWTS BinBot</strong> to engineering academic NLP algorithms in my <strong>FalsiCode Undergraduate Thesis</strong>, I am dedicated to expanding my skills, embracing modern technologies, and building software that solves tangible problems.
-              </p>
-
               {/* Quick Profile Meta Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-slate-100">
                 <div className="flex items-center gap-2.5 text-xs text-slate-600">
