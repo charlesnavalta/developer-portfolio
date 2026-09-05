@@ -44,7 +44,7 @@ export default function Hero() {
           </div>
 
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.2] sm:leading-[1.15]">
-            Hi, I'm <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 bg-clip-text text-transparent">{personal.name}</span>
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 bg-clip-text text-transparent">{personal.name}</span>
           </h1>
 
           <p className="text-base sm:text-xl md:text-2xl text-slate-700 font-medium max-w-2xl mx-auto leading-relaxed px-2">

@@ -1,11 +1,11 @@
 export const portfolioData = {
   personal: {
-    name: "Charles Navalta",
+    name: "Charles Darwin Navalta",
     fullName: "Charles Darwin Navalta",
     nickname: "Charles",
-    role: "Graduating Computer Science Student",
+    role: "Computer Science Student",
     subRoles: ["Software Engineer", "AI & NLP Enthusiast", "Full-Stack Developer"],
-    tagline: "4th Year Computer Science Student at Pamantasan ng Cabuyao | Passionate about continuous learning, problem solving, and building scalable software.",
+    tagline: "Passionate about continuous learning, algorithmic problem-solving, and engineering scalable software that solves real-world challenges.",
     bio: "4th-year Computer Science student at the University of Cabuyao (Pamantasan ng Cabuyao) and creator/lead programmer of FalsiCode, my undergraduate thesis. I'm passionate about software engineering, NLP, and algorithmic problem-solving, with hands-on experience building practical solutions like CWTS BinBot (civic automation) and FalsiCode (academic NLP). I'm driven to keep learning and building software that solves real-world problems.",
     email: "charlesdarwinnavalta@gmail.com",
     github: "https://github.com/charlesnavalta",
