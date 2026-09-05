@@ -37,13 +37,20 @@ export default function Contact() {
         },
         body: JSON.stringify({
           access_key: '487e44b8-b167-4340-a7c5-651c913b79c0',
-          name: senderName,
-          email: senderEmail,
-          replyto: senderEmail,
-          from_name: `${senderName} (Portfolio)`,
           subject: `[Portfolio Contact] ${userSubject} — from ${senderName}`,
-          message: formData.message.trim(),
-          botcheck: ''
+          from_name: `${senderName} (Portfolio Visitor)`,
+          replyto: senderEmail,
+          botcheck: '',
+          "Sender Name": senderName,
+          "Sender Email": senderEmail,
+          "Inquiry Topic": userSubject,
+          "Message": formData.message.trim(),
+          "Source": "charlesdarwinnavalta.vercel.app",
+          "Submitted At": new Date().toLocaleString('en-US', {
+            dateStyle: 'medium',
+            timeStyle: 'short',
+            timeZone: 'Asia/Manila'
+          })
         })
       });
 
