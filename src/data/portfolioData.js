@@ -20,8 +20,6 @@ export const portfolioData = {
     degree: "Bachelor of Science in Computer Science",
     university: "University of Cabuyao (Pamantasan ng Cabuyao)",
     gradYear: "Class of 2027",
-    honors: "Dean's Lister (S.Y. 2023–2024)",
-    gpa: "Dean's List Standing",
     coursework: [
       "Data Structures & Algorithms",
       "Software Engineering & System Architecture",
@@ -37,27 +35,13 @@ export const portfolioData = {
         level: "College / Tertiary",
         institution: "University of Cabuyao (Pamantasan ng Cabuyao)",
         program: "Bachelor of Science in Computer Science",
-        period: "2023 – Present (Class of 2027)",
-        honors: "Dean's Lister (S.Y. 2023–2024)"
+        period: "2023 – Present (Class of 2027)"
       },
       {
         level: "Senior High School",
         institution: "Cabuyao Institute of Technology",
         program: "TVL - Information and Communication Technology (ICT)",
-        period: "2021 – 2023",
-        honors: "With High Honors (2021–2022), With Honors (2022–2023)"
-      },
-      {
-        level: "Junior High School",
-        institution: "Cabuyao Integrated National High School",
-        program: "Secondary Education",
-        period: "2017 – 2021"
-      },
-      {
-        level: "Elementary",
-        institution: "Cabuyao Central Elementary School",
-        program: "Primary Education",
-        period: "2011 – 2017"
+        period: "2021 – 2023"
       }
     ]
   },

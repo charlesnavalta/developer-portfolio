@@ -51,7 +51,7 @@ export default function Terminal() {
         break;
 
       case 'education':
-        const eduHistory = education.history.map(e => `• [${e.level}] ${e.institution}\n  Program: ${e.program} (${e.period})\n  Honors:  ${e.honors || 'N/A'}`).join('\n\n');
+        const eduHistory = education.history.map(e => `• [${e.level}] ${e.institution}\n  Program: ${e.program} (${e.period})${e.honors ? `\n  Honors:  ${e.honors}` : ''}`).join('\n\n');
         newEntries.push({
           type: "output",
           text: `🎓 EDUCATIONAL BACKGROUND:\n\n${eduHistory}`
