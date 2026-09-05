@@ -168,7 +168,6 @@ export const portfolioData = {
       techStack: ["Python", "Flask", "Scikit-Learn (TF-IDF)", "AST (javalang)", "React 18", "MySQL", "Docker Compose", "Vercel"],
       github: "https://github.com/charlesnavalta/Code-Plagiarism-Detection-in-DSA-using-AST-N-Grams-and-TF-IDF",
       demo: "https://falsicode.vercel.app/",
-      image: "/falsicode-preview.png",
       stats: { metric: "Live Platform", value: "FalsiCode" }
     },
     {
@@ -189,7 +188,6 @@ export const portfolioData = {
       techStack: ["Unity Engine", "C#", ".NET", "Game Physics", "Object-Oriented Design"],
       github: "https://github.com/charlesnavalta/DebuggingFarm",
       demo: "https://github.com/charlesnavalta/DebuggingFarm",
-      image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
       stats: { metric: "Platform", value: "Unity & C#" }
     },
     {
@@ -210,7 +208,6 @@ export const portfolioData = {
       techStack: ["JavaScript", "Chrome Extensions API (MV3)", "DOM Manipulation", "HTML5/CSS3"],
       github: "https://github.com/charlesnavalta/AutoAnswerExt",
       demo: "https://github.com/charlesnavalta/AutoAnswerExt",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
       stats: { metric: "Standard", value: "Manifest V3" }
     },
     {
@@ -231,7 +228,6 @@ export const portfolioData = {
       techStack: ["React 18", "JavaScript (ES6+)", "CSS3", "Component Architecture"],
       github: "https://github.com/charlesnavalta/Crafty-Corner",
       demo: "https://github.com/charlesnavalta/Crafty-Corner",
-      image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=80",
       stats: { metric: "Frontend", value: "React 18 SPA" }
     },
     {
