@@ -193,6 +193,8 @@ export const portfolioData = {
       title: "FalsiCode: Code Plagiarism Detection in DSA using AST, N-Grams & TF-IDF",
       tag: "🎓 Undergraduate Thesis / NLP & Algorithms",
       category: "Thesis",
+      status: "Completed",
+      statusNote: "Defended & Deployed Live",
       featured: true,
       description: "Undergraduate thesis project at Pamantasan ng Cabuyao: An automated academic source code plagiarism detection system for Data Structures & Algorithms. Combines Abstract Syntax Tree (AST) structural parsing with N-Grams and TF-IDF cosine similarity to detect structural and semantic code plagiarism across student submissions.",
       highlights: [
@@ -211,6 +213,8 @@ export const portfolioData = {
       title: "CWTS BinBot: Automated Trash Bin Segregation System",
       tag: "🏆 Best in Project Implementation",
       category: "Software Engineering",
+      status: "Completed",
+      statusNote: "Project Implemented & Awarded",
       featured: true,
       description: "Award-winning civic automation system developed under the NSTP CWTS program at Pamantasan ng Cabuyao. Features automated sensor classification and mechanical segregation for institutional waste management.",
       highlights: [
@@ -229,6 +233,8 @@ export const portfolioData = {
       title: "Crafty-Corner: Creative Handmade & DIY E-Commerce Platform",
       tag: "🛍️ Full-Stack Web App",
       category: "Full-Stack",
+      status: "Completed",
+      statusNote: "Core Architecture Finished",
       featured: true,
       description: "A modern, responsive e-commerce web platform designed for handmade crafts and DIY kits. Features interactive product catalogs, real-time cart state management, checkout flows, and modular component architecture.",
       highlights: [
@@ -247,6 +253,8 @@ export const portfolioData = {
       title: "AutoAnswerExt: Chrome Browser Extension & DOM Automation Tool",
       tag: "⚡ Tooling & Automation",
       category: "Software Engineering",
+      status: "In Progress",
+      statusNote: "Feature Enhancements & Optimization",
       featured: false,
       description: "A high-efficiency Google Chrome browser extension built with Manifest V3. Automates DOM parsing, form interaction, and question-answering workflows using event-driven background service workers and content scripts.",
       highlights: [
@@ -265,6 +273,8 @@ export const portfolioData = {
       title: "DebuggingFarm & Sunberry-Village: Interactive Simulation & Game Systems",
       tag: "🎮 Game Dev & C# Systems",
       category: "Software Engineering",
+      status: "In Progress",
+      statusNote: "Active Systems Exploration",
       featured: false,
       description: "Interactive game mechanics, laboratory simulation games, and extensible C# modding systems created with the Unity Engine and .NET game frameworks.",
       highlights: [

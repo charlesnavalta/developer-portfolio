@@ -89,6 +89,25 @@ export default function Projects() {
               {/* Card Body */}
               <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-2">
+                  {/* Category & Status Indicator Strip */}
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-[10px] sm:text-[11px] font-mono font-semibold text-blue-600 uppercase tracking-wider">
+                      {project.category}
+                    </span>
+                    
+                    {project.status === 'Completed' ? (
+                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                        <span>Completed</span>
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                        <span>In Progress</span>
+                      </span>
+                    )}
+                  </div>
+
                   <h3
                     onClick={() => setSelectedProject(project)}
                     className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors cursor-pointer flex items-center justify-between"
