@@ -226,8 +226,8 @@ export const portfolioData = {
         "Crafted custom CSS design tokens for an intuitive shopping experience across mobile and desktop.",
       ],
       techStack: ["React 18", "JavaScript (ES6+)", "CSS3", "Component Architecture"],
-      github: "https://github.com/charlesnavalta/Crafty-Corner",
-      demo: "https://github.com/charlesnavalta/Crafty-Corner",
+      github: "https://github.com/charlesnavalta/AppDev-Finals_LabExam_2025",
+      demo: "https://github.com/charlesnavalta/AppDev-Finals_LabExam_2025",
       stats: { metric: "Frontend", value: "React 18 SPA" }
     },
     {
