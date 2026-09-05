@@ -224,20 +224,20 @@ export default function Contact() {
 
                   <div className="flex flex-col sm:flex-row gap-2.5 pt-1">
                     <button
-                      type="submit"
-                      className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-xs text-white bg-blue-600 hover:bg-blue-700 shadow-md shadow-blue-500/20 transition-all cursor-pointer font-mono"
+                      type="button"
+                      onClick={handleOpenGmailWeb}
+                      className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-xs text-white bg-red-600 hover:bg-red-700 shadow-md shadow-red-500/20 transition-all cursor-pointer font-mono"
                     >
-                      <Send className="w-3.5 h-3.5" />
-                      <span>OPEN IN MAIL APP</span>
+                      <Mail className="w-4 h-4" />
+                      <span>SEND VIA GMAIL</span>
                     </button>
 
                     <button
-                      type="button"
-                      onClick={handleOpenGmailWeb}
+                      type="submit"
                       className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-xs text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 hover:border-slate-400 shadow-xs transition-all cursor-pointer font-mono"
                     >
-                      <Mail className="w-3.5 h-3.5 text-red-600" />
-                      <span>OPEN IN GMAIL (WEB)</span>
+                      <Send className="w-3.5 h-3.5 text-blue-600" />
+                      <span>OTHER MAIL APPS</span>
                     </button>
                   </div>
                 </form>
