@@ -250,9 +250,8 @@ export const portfolioData = {
         "Designed to promote campus environmental sustainability through automated waste separation."
       ],
       techStack: ["Sensors & Microcontrollers", "Automation Logic", "System Integration", "Hardware/Software"],
-      github: "https://github.com/charlesnavalta",
-      demo: "https://github.com/charlesnavalta",
-      image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80",
+      github: null,
+      demo: null,
       stats: { metric: "Recognition", value: "Best in Project" }
     }
   ],

@@ -49,14 +49,16 @@ export default function ProjectModal({ project, onClose }) {
           </h2>
         </div>
 
-        {/* Image Preview */}
-        <div className="rounded-2xl overflow-hidden border border-slate-200 mb-6 relative aspect-video">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover"
-          />
-        </div>
+        {/* Image Preview (Only if image exists) */}
+        {project.image && (
+          <div className="rounded-2xl overflow-hidden border border-slate-200 mb-6 relative aspect-video bg-slate-100">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )}
 
         {/* Description */}
         <div className="space-y-4 mb-6">
@@ -101,25 +103,35 @@ export default function ProjectModal({ project, onClose }) {
         {/* Action Links */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-4 border-t border-slate-100">
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 shadow-sm transition-all"
-            >
-              <GithubIcon className="w-4 h-4" />
-              <span>View Source Code</span>
-            </a>
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 shadow-sm transition-all"
+              >
+                <GithubIcon className="w-4 h-4" />
+                <span>View Source Code</span>
+              </a>
+            )}
 
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-all"
-            >
-              <ExternalLink className="w-4 h-4" />
-              <span>Live Demonstration</span>
-            </a>
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-all"
+              >
+                <ExternalLink className="w-4 h-4" />
+                <span>Live Demonstration</span>
+              </a>
+            )}
+
+            {!project.github && !project.demo && (
+              <span className="text-xs font-mono text-slate-500 italic px-1">
+                Hardware / Civic System • Archived
+              </span>
+            )}
           </div>
 
           <button
