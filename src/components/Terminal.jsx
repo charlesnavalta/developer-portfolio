@@ -60,12 +60,19 @@ export default function Terminal() {
 
       case 'certifications':
       case 'certs':
-      case 'learning':
-        const certList = certifications.map(c => `• [${c.status}] ${c.title}\n  Issuer: ${c.issuer} (${c.targetDate})\n  Track:  ${c.track}\n  Focus:  ${c.skillsCovered.join(', ')}`).join('\n\n');
-        newEntries.push({
-          type: "output",
-          text: `📜 CERTIFICATIONS & LEARNING ROADMAP:\n\n${certList}`
-        });
+      case 'credentials':
+        if (!certifications || certifications.length === 0) {
+          newEntries.push({
+            type: "output",
+            text: `📜 CERTIFICATIONS:\nNo certifications listed yet. Technical qualifications are demonstrated through capstone research (FalsiCode) and hands-on GitHub projects.`
+          });
+        } else {
+          const certList = certifications.map(c => `• ${c.title}\n  Issuer: ${c.issuer} (${c.issueDate || 'Verified'})\n  Focus:  ${(c.skillsCovered || []).join(', ')}`).join('\n\n');
+          newEntries.push({
+            type: "output",
+            text: `📜 CERTIFICATIONS & CREDENTIALS:\n\n${certList}`
+          });
+        }
         break;
 
       case 'leadership':
@@ -161,7 +168,7 @@ export default function Terminal() {
     }
   };
 
-  const quickCommands = ['help', 'about', 'education', 'certifications', 'leadership', 'thesis', 'projects', 'cat resume.txt', 'clear'];
+  const quickCommands = ['help', 'about', 'education', 'thesis', 'projects', 'skills', 'leadership', 'contact', 'cat resume.txt', 'clear'];
 
   return (
     <section id="terminal" className="py-20 relative bg-white border-t border-slate-200/80">
@@ -244,7 +251,7 @@ export default function Terminal() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder="type a command (e.g. certifications, skills, capstone)..."
+                placeholder="type a command (e.g. projects, skills, thesis, about)..."
                 className="flex-1 bg-transparent text-slate-100 placeholder-slate-500 focus:outline-none font-mono"
               />
             </div>

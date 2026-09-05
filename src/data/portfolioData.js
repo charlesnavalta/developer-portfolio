@@ -65,60 +65,22 @@ export const portfolioData = {
   stats: [
     { label: "Academic Standing", value: "Dean's List" },
     { label: "Undergraduate Thesis", value: "Lead Programmer" },
-    { label: "Target Credentials", value: "Cloud & Dev Tracks" },
+    { label: "Active Project Builds", value: "5+ Systems" },
     { label: "GitHub Repositories", value: "10+" },
   ],
 
-  certifications: [
-    {
-      id: "aws-cloud-practitioner",
-      title: "AWS Certified Cloud Practitioner (CLF-C02)",
-      issuer: "Amazon Web Services (AWS)",
-      status: "In Preparation",
-      statusType: "in-prep",
-      targetDate: "Target 2026",
-      category: "Cloud & Infrastructure",
-      description: "Foundational mastery of AWS cloud computing, cloud security, IAM policies, core services (EC2, S3, RDS, Lambda), and scalable cloud architecture.",
-      skillsCovered: ["AWS Core Services", "Cloud Architecture", "IAM & Security", "Serverless Basics"],
-      track: "Active Member of AWS Cloud Club (Pamantasan ng Cabuyao)"
-    },
-    {
-      id: "meta-frontend-cert",
-      title: "Meta Front-End Developer Professional Certificate",
-      issuer: "Meta / Coursera",
-      status: "In Preparation",
-      statusType: "in-prep",
-      targetDate: "Target 2026",
-      category: "Software Engineering",
-      description: "Advanced client-side engineering covering modern React 18, state management, component lifecycles, REST APIs, UX principles, and automated testing.",
-      skillsCovered: ["React 18", "JavaScript ES6+", "Component Architecture", "RESTful APIs", "Responsive UI"],
-      track: "Full-Stack Web Specialization"
-    },
-    {
-      id: "python-pcap",
-      title: "PCAP – Certified Associate in Python Programming",
-      issuer: "Python Institute",
-      status: "Target Roadmap",
-      statusType: "roadmap",
-      targetDate: "Target 2026",
-      category: "Core Programming",
-      description: "Comprehensive certification verifying advanced procedural and OOP programming, data processing algorithms, exception handling, and module design in Python.",
-      skillsCovered: ["OOP Principles", "Algorithm Efficiency", "File Processing", "Data Structures"],
-      track: "NLP & Backend Architecture Base"
-    },
-    {
-      id: "docker-devops-cert",
-      title: "Docker & Containerization Fundamentals",
-      issuer: "Docker / Linux Foundation",
-      status: "Target Roadmap",
-      statusType: "roadmap",
-      targetDate: "Target 2026",
-      category: "DevOps & Tooling",
-      description: "Practical expertise in building container images, multi-container orchestration with Docker Compose, volume persistence, and microservice deployment pipelines.",
-      skillsCovered: ["Docker Compose", "Container Security", "CI/CD Integration", "Microservices"],
-      track: "Full-Stack Deployment & DevOps"
-    }
-  ],
+  // Certifications list (Empty by default. When you earn certifications, simply add them here!)
+  // Example schema:
+  // {
+  //   id: "aws-cloud-practitioner",
+  //   title: "AWS Certified Cloud Practitioner (CLF-C02)",
+  //   issuer: "Amazon Web Services (AWS)",
+  //   issueDate: "2026",
+  //   credentialUrl: "https://www.credly.com/...",
+  //   category: "Cloud & Infrastructure",
+  //   skillsCovered: ["AWS Core Services", "Cloud Architecture", "IAM & Security"],
+  // }
+  certifications: [],
 
   leaderships: [
     {
