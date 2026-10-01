@@ -19,7 +19,7 @@ export default function About() {
             About <span className="text-blue-600">Me</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-600 mt-2">
-            Computer Science student at Pamantasan ng Cabuyao with a strong background in software engineering, automation systems, and algorithmic problem-solving.
+            Computer Science student at University of Cabuyao with a strong background in software engineering, automation systems, and algorithmic problem-solving.
           </p>
         </div>
 
@@ -29,7 +29,7 @@ export default function About() {
           <div className="lg:col-span-6 space-y-6">
             <div className="glass-panel p-6 sm:p-8 rounded-3xl space-y-4">
               <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-                <span>Building with Code, Data & Purpose</span>
+                <span>Building with Code, Automation & Purpose</span>
               </h3>
               
               <p className="text-sm text-slate-600 leading-relaxed">

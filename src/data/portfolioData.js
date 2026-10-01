@@ -6,7 +6,7 @@ export const portfolioData = {
     role: "Computer Science Student",
     subRoles: ["Software Engineer", "Automation Developer", "Full-Stack Developer"],
     tagline: "Passionate about continuous learning, workflow automation, algorithmic problem-solving, and engineering scalable software that solves real-world challenges.",
-    bio: "Computer Science student at the University of Cabuyao (Pamantasan ng Cabuyao) and creator/lead programmer of FalsiCode, my undergraduate thesis. I'm passionate about software engineering, automation systems, and algorithmic problem-solving, with hands-on experience building practical solutions like CWTS BinBot (civic automation), AutoAnswerExt (browser automation), and FalsiCode (academic NLP & plagiarism detection). I'm driven to build software that streamlines workflows and solves real-world problems.",
+    bio: "Computer Science student at University of Cabuyao and lead developer of FalsiCode. I specialize in software engineering, automation systems, and algorithmic problem-solving, with practical experience engineering browser automations, civic technology, and code analysis tools to streamline workflows.",
     email: "charlesdarwinnavalta@gmail.com",
     github: "https://github.com/charlesnavalta",
     linkedin: "https://www.linkedin.com/in/charles-darwin-navalta-a908623b1/",
@@ -18,7 +18,7 @@ export const portfolioData = {
 
   education: {
     degree: "Bachelor of Science in Computer Science",
-    university: "University of Cabuyao (Pamantasan ng Cabuyao)",
+    university: "University of Cabuyao",
     gradYear: "Class of 2027",
     coursework: [
       "Data Structures & Algorithms",
@@ -33,7 +33,7 @@ export const portfolioData = {
     history: [
       {
         level: "College / Tertiary",
-        institution: "University of Cabuyao (Pamantasan ng Cabuyao)",
+        institution: "University of Cabuyao",
         program: "Bachelor of Science in Computer Science",
         period: "2023 – Present (Class of 2027)"
       },
@@ -70,21 +70,21 @@ export const portfolioData = {
     {
       role: "Member",
       org: "Association of Computer Science Students (ACSS)",
-      institution: "Pamantasan ng Cabuyao",
+      institution: "University of Cabuyao",
       period: "2023 – Present",
       desc: "Active member contributing to CS departmental events, coding seminars, and student technology initiatives."
     },
     {
       role: "Member",
       org: "AWS Cloud Club",
-      institution: "Pamantasan ng Cabuyao",
+      institution: "University of Cabuyao",
       period: "2024 – 2025",
       desc: "Participating in cloud architecture workshops, AWS foundational learning paths, and student developer summits."
     },
     {
       role: "Head Production",
       org: "NSTP Civic Welfare Training Service (CWTS)",
-      institution: "Pamantasan ng Cabuyao",
+      institution: "University of Cabuyao",
       period: "2023 – 2024",
       desc: "Led the production team for community-oriented technical projects including the award-winning 'BinBot: Automated Trash Bin Segregation' system."
     },
@@ -239,9 +239,9 @@ export const portfolioData = {
       status: "Completed",
       statusNote: "Project Implemented & Awarded",
       featured: true,
-      description: "Award-winning civic automation system developed under the NSTP CWTS program at Pamantasan ng Cabuyao. Features automated sensor classification and mechanical segregation for institutional waste management.",
+      description: "Award-winning civic automation system developed under the NSTP CWTS program at University of Cabuyao. Features automated sensor classification and mechanical segregation for institutional waste management.",
       highlights: [
-        "Awarded 'Best in Project Implementation' by the NSTP Civic Welfare Training Service department at Pamantasan ng Cabuyao.",
+        "Awarded Best in Project Implementation by the NSTP Civic Welfare Training Service department at University of Cabuyao.",
         "Led production engineering, sensor integration logic, and project demonstration.",
         "Designed to promote campus environmental sustainability through automated waste separation."
       ],
