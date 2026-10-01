@@ -173,22 +173,29 @@ export const portfolioData = {
     {
       id: "debugging-farm-game",
       title: "DebuggingFarm",
-      tag: "Game Dev & C# Systems",
+      tag: "Unity 6 • 2D Simulation Game",
       category: "Software Engineering",
       period: "2026 – Present",
       status: "In Progress",
-      statusNote: "Active Systems Exploration",
+      statusNote: "Active Gameplay Systems Development",
       featured: false,
-      description: "Interactive game mechanics, laboratory simulation games, and extensible C# modding systems created with the Unity Engine and .NET game frameworks.",
+      description: "A cozy 2D top-down farming simulation and sandbox game built in Unity 6 and C#. Follows the story of a software engineer recovering from burnout by rebuilding an agricultural homestead in Bohol, Philippines, using structured problem-solving.",
+      goal: "Engineered a modular, data-driven 2D simulation game combining custom 8-way movement, grid-based tilemap farming cycles, dynamic inventory, and multi-area scene transitions.",
       highlights: [
-        "Programmed object-oriented player controllers, physics triggers, and state machines in C#.",
-        "Implemented custom event listeners and content injection pipelines in Unity and modding frameworks.",
-        "Designed modular architecture for game asset management and laboratory gameplay scenarios.",
+        "Custom 8-Way Movement System: Implemented decoupled vector physics and facing memory to ensure smooth diagonal movement without speed distortion.",
+        "Data-Driven Inventory & Farming Engine: Built modular item ScriptableObjects and a grid-based tilemap system managing multi-state soil hydration and crop growth cycles.",
+        "Interactive World & Scene Transitions: Created physics-based resource harvesting and persistent area transitions connecting farm, forest, and town environments."
       ],
-      techStack: ["Unity Engine", "C#", ".NET", "Game Physics", "Object-Oriented Design"],
+      techStack: ["Unity 6", "C#", "ScriptableObjects", "Universal Render Pipeline", "2D Tilemaps", "Input System", "Git"],
+      techLayers: [
+        { layer: "Game Engine", tech: "Unity 6, Universal Render Pipeline 2D, Pixel Art Materials" },
+        { layer: "Core Programming", tech: "C#, ScriptableObject Architecture, Rigidbody2D Physics" },
+        { layer: "Gameplay Systems", tech: "8-Directional Input System, Grid Tilemap Farming, Slot Inventory" },
+        { layer: "World Architecture", tech: "Composite Colliders, Resource Harvesting, Scene Transition Manager" }
+      ],
       github: "https://github.com/charlesnavalta/DebuggingFarm",
       demo: "https://github.com/charlesnavalta/DebuggingFarm",
-      stats: { metric: "Platform", value: "Unity & C#" }
+      stats: { metric: "Engine", value: "Unity 6 & C#" }
     },
     {
       id: "auto-answer-ext",
