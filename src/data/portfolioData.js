@@ -149,10 +149,7 @@ export const portfolioData = {
       highlights: [
         "Abstract Syntax Tree Analysis: Parses Python and Java source code to detect structural similarity despite renamed variables or modified formatting.",
         "Dead-Code Pruning: Automatically strips unused functions and decoy blocks inserted to evade detection.",
-        "Asymmetric Similarity Scoring: Uses cosine similarity and containment metrics to identify plagiarized algorithm snippets inside larger files.",
-        "Multi-Class Taxonomy: Classifies similarity into verbatim copies, renamed variables, and restructured program logic.",
-        "Classroom Management: Includes role-based access, automated syntax verification, side-by-side visual diffs, and downloadable PDF reports.",
-        "Cloud Infrastructure: Deployed with a React frontend on Vercel, a containerized Python Flask API on Render, and MySQL on Aiven Cloud."
+        "Asymmetric Similarity Scoring: Uses cosine similarity and containment metrics to identify plagiarized algorithm snippets inside larger files."
       ],
       techStack: ["React", "Python Flask", "Abstract Syntax Trees", "Scikit-Learn", "MySQL", "Docker", "Gunicorn", "Vercel"],
       techLayers: [
