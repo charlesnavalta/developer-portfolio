@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { Sparkles, Code2, Server, Cpu, Wrench, Search, CheckCircle2 } from 'lucide-react';
+import { Sparkles, Code2, Server, Cpu, Wrench, Search, CheckCircle2, Info } from 'lucide-react';
 
 export default function Skills() {
   const { skills } = portfolioData;
