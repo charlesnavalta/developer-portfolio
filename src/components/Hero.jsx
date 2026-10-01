@@ -35,7 +35,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-base sm:text-xl md:text-2xl text-slate-700 font-medium max-w-2xl mx-auto leading-relaxed px-2">
-            {personal.role} focused on <span className="text-blue-600 font-semibold">Software Engineering</span> & <span className="text-indigo-600 font-semibold">Data Science</span>.
+            {personal.role} focused on <span className="text-blue-600 font-semibold">Software Engineering</span> & <span className="text-indigo-600 font-semibold">Automation</span>.
           </p>
 
           <p className="text-xs sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed px-2">

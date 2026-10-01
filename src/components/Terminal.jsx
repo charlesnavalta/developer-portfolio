@@ -87,11 +87,11 @@ export default function Terminal() {
       case 'skills':
         const langs = skills.languages.map(l => `${l.name} (${l.level}%)`).join(', ');
         const frameworks = skills.frameworks.map(f => f.name).join(', ');
-        const ds = skills.dataScienceAndAI.map(d => d.name).join(', ');
+        const autoSkills = skills.automationAndAI.map(d => d.name).join(', ');
         const devops = skills.toolsAndDevOps.map(t => t.name).join(', ');
         newEntries.push({
           type: "output",
-          text: `💻 Languages:\n   ${langs}\n\n🌐 Frameworks & Web:\n   ${frameworks}\n\n🧠 Data Science & AI:\n   ${ds}\n\n⚙️ Databases & Tools:\n   ${devops}`
+          text: `💻 Languages:\n   ${langs}\n\n🌐 Frameworks & Web:\n   ${frameworks}\n\n⚡ Automation & AI:\n   ${autoSkills}\n\n⚙️ Databases & Tools:\n   ${devops}`
         });
         break;
 

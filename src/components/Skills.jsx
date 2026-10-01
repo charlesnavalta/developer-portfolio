@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { Sparkles, Code2, Server, Brain, Wrench, Search, CheckCircle2, Info } from 'lucide-react';
+import { Sparkles, Code2, Server, Cpu, Wrench, Search, CheckCircle2 } from 'lucide-react';
 
 export default function Skills() {
   const { skills } = portfolioData;
@@ -11,7 +11,7 @@ export default function Skills() {
     { id: 'all', label: 'All Skills', icon: Sparkles },
     { id: 'languages', label: 'Languages', icon: Code2 },
     { id: 'frameworks', label: 'Frameworks & Web', icon: Server },
-    { id: 'dataScience', label: 'Data Science & AI', icon: Brain },
+    { id: 'automation', label: 'Automation & AI', icon: Cpu },
     { id: 'devops', label: 'Databases & Tools', icon: Wrench },
   ];
 
@@ -134,15 +134,15 @@ export default function Skills() {
             </div>
           )}
 
-          {/* Card 3: Data Science & AI */}
-          {(activeTab === 'all' || activeTab === 'dataScience') && (
+          {/* Card 3: Automation & AI */}
+          {(activeTab === 'all' || activeTab === 'automation') && (
             <div className="glass-panel p-6 rounded-2xl space-y-4 bg-white">
               <div className="flex items-center gap-2 pb-2 border-b border-slate-100 text-indigo-600">
-                <Brain className="w-5 h-5" />
-                <h3 className="font-mono font-bold text-sm text-slate-900 uppercase tracking-wider">Data Science & AI</h3>
+                <Cpu className="w-5 h-5" />
+                <h3 className="font-mono font-bold text-sm text-slate-900 uppercase tracking-wider">Automation & AI</h3>
               </div>
               <div className="flex flex-wrap gap-2 pt-1">
-                {skills.dataScienceAndAI
+                {skills.automationAndAI
                   .filter(d => matchesSearch(d.name))
                   .map((item, idx) => (
                     <div

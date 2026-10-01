@@ -4,9 +4,9 @@ export const portfolioData = {
     fullName: "Charles Darwin Navalta",
     nickname: "Charles",
     role: "Computer Science Student",
-    subRoles: ["Software Engineer", "AI & NLP Enthusiast", "Full-Stack Developer"],
-    tagline: "Passionate about continuous learning, algorithmic problem-solving, and engineering scalable software that solves real-world challenges.",
-    bio: "Computer Science student at the University of Cabuyao (Pamantasan ng Cabuyao) and creator/lead programmer of FalsiCode, my undergraduate thesis. I'm passionate about software engineering, NLP, and algorithmic problem-solving, with hands-on experience building practical solutions like CWTS BinBot (civic automation) and FalsiCode (academic NLP). I'm driven to keep learning and building software that solves real-world problems.",
+    subRoles: ["Software Engineer", "Automation Developer", "Full-Stack Developer"],
+    tagline: "Passionate about continuous learning, workflow automation, algorithmic problem-solving, and engineering scalable software that solves real-world challenges.",
+    bio: "Computer Science student at the University of Cabuyao (Pamantasan ng Cabuyao) and creator/lead programmer of FalsiCode, my undergraduate thesis. I'm passionate about software engineering, automation systems, and algorithmic problem-solving, with hands-on experience building practical solutions like CWTS BinBot (civic automation), AutoAnswerExt (browser automation), and FalsiCode (academic NLP & plagiarism detection). I'm driven to build software that streamlines workflows and solves real-world problems.",
     email: "charlesdarwinnavalta@gmail.com",
     github: "https://github.com/charlesnavalta",
     linkedin: "https://www.linkedin.com/in/charles-darwin-navalta-a908623b1/",
@@ -47,7 +47,7 @@ export const portfolioData = {
   },
 
   stats: [
-    { label: "Core Focus", value: "Software & NLP" },
+    { label: "Core Focus", value: "Software & Automation" },
     { label: "Undergraduate Thesis", value: "Lead Programmer" },
     { label: "Active Project Builds", value: "5+ Systems" },
     { label: "GitHub Repositories", value: "10+" },
@@ -99,8 +99,8 @@ export const portfolioData = {
 
   skills: {
     languages: [
-      { name: "Python", level: 75, tag: "Thesis & NLP", levelLabel: "Proficient" },
-      { name: "JavaScript (ES6+)", level: 70, tag: "React & Chrome Ext", levelLabel: "Working Proficiency" },
+      { name: "Python", level: 75, tag: "Automation & NLP", levelLabel: "Proficient" },
+      { name: "JavaScript (ES6+)", level: 70, tag: "React & Browser Ext", levelLabel: "Working Proficiency" },
       { name: "HTML5 & CSS3", level: 75, tag: "Responsive UI", levelLabel: "Proficient" },
       { name: "SQL (MySQL)", level: 65, tag: "Database & ORM", levelLabel: "Competent" },
       { name: "Java", level: 58, tag: "DSA & AST Parsing", levelLabel: "Academic Base" },
@@ -114,13 +114,14 @@ export const portfolioData = {
       { name: "RESTful APIs", category: "Backend" },
       { name: "Axios", category: "Frontend" },
     ],
-    dataScienceAndAI: [
-      { name: "Scikit-Learn", category: "Machine Learning" },
+    automationAndAI: [
+      { name: "Browser & DOM Automation (MV3)", category: "Automation" },
+      { name: "AST Parsing (javalang)", category: "Code Analysis" },
       { name: "TF-IDF Vectorization", category: "NLP & Feature Extraction" },
-      { name: "AST Parsing (javalang)", category: "Code Syntax Analysis" },
+      { name: "Automated Sensor Integration", category: "Civic Automation" },
       { name: "N-Grams Tokenization", category: "Algorithms" },
-      { name: "Cosine Similarity Metrics", category: "Machine Learning" },
-      { name: "Pandas & NumPy", category: "Data Science" },
+      { name: "Scikit-Learn (ML Metrics)", category: "Algorithms" },
+      { name: "Pandas & Data Processing", category: "Data Processing" },
     ],
     toolsAndDevOps: [
       { name: "Docker & Docker Compose", category: "Containerization" },

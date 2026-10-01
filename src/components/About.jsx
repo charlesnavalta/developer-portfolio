@@ -19,7 +19,7 @@ export default function About() {
             About <span className="text-blue-600">Me</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-600 mt-2">
-            Computer Science student at Pamantasan ng Cabuyao with a strong background in software engineering, NLP, and technical leadership.
+            Computer Science student at Pamantasan ng Cabuyao with a strong background in software engineering, automation systems, and algorithmic problem-solving.
           </p>
         </div>
 
