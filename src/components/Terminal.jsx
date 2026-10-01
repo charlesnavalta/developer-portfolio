@@ -122,7 +122,7 @@ export default function Terminal() {
       case 'resume':
         newEntries.push({
           type: "output",
-          text: `=====================================================\n${(personal.fullName || personal.name).toUpperCase()} - CS GRADUATE RESUME SUMMARY\n${personal.role} | ${personal.email}\n=====================================================\n[EDUCATION]\n${education.degree} - ${education.university}\nHonors: ${education.honors}\n\n[HIGHLIGHTED THESIS]\nFalsiCode - Plagiarism Detection in DSA using AST & TF-IDF (React 18 + Flask + Docker)\nLive: https://falsicode.vercel.app/\n\n[KEY SKILLS]\nPython, JavaScript, React 18, Flask, MySQL, Docker, Scikit-Learn, Unity\n=====================================================`
+          text: `=====================================================\n${(personal.fullName || personal.name).toUpperCase()} - CS GRADUATE RESUME SUMMARY\n${personal.role} | ${personal.email}\n=====================================================\n[EDUCATION]\n${education.degree} - ${education.university}\nHonors: ${education.honors}\n\n[HIGHLIGHTED THESIS]\nFalsiCode - Plagiarism Detection in Data Structures and Algorithms using Abstract Syntax Trees\nLive: https://falsicode.vercel.app/\n\n[KEY SKILLS]\nPython, JavaScript, React 18, Flask, MySQL, Docker, Scikit-Learn, Unity\n=====================================================`
         });
         break;
 
