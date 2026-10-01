@@ -172,7 +172,7 @@ export const portfolioData = {
     },
     {
       id: "debugging-farm-game",
-      title: "DebuggingFarm & Sunberry-Village: Interactive Simulation & Game Systems",
+      title: "DebuggingFarm",
       tag: "Game Dev & C# Systems",
       category: "Software Engineering",
       period: "2026 – Present",
