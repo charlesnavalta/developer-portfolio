@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, ExternalLink, CheckCircle2, Sparkles, Calendar } from 'lucide-react';
+import { X, ExternalLink, CheckCircle2, Sparkles, Calendar, Target, Layers, Cloud } from 'lucide-react';
 import { GithubIcon } from './Icons';
 
 export default function ProjectModal({ project, onClose }) {
@@ -69,6 +69,19 @@ export default function ProjectModal({ project, onClose }) {
             </p>
           </div>
 
+          {/* System Goal / Objective Callout */}
+          {project.goal && (
+            <div className="p-4 rounded-2xl bg-blue-50/70 border border-blue-100 text-slate-800 space-y-1.5">
+              <div className="flex items-center gap-2 text-xs font-mono font-bold text-blue-800 uppercase tracking-wider">
+                <Target className="w-4 h-4 text-blue-600 shrink-0" />
+                <span>System Objective & Problem Solved</span>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                {project.goal}
+              </p>
+            </div>
+          )}
+
           {/* Key Engineering Highlights */}
           {project.highlights && project.highlights.length > 0 && (
             <div className="space-y-3 pt-1">
@@ -77,10 +90,70 @@ export default function ProjectModal({ project, onClose }) {
                 <span>Key Architecture & Implementation Highlights</span>
               </h4>
               <div className="space-y-2.5">
-                {project.highlights.map((highlight, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 bg-slate-50/80 p-3 rounded-2xl border border-slate-100">
-                    <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
-                    <span>{highlight}</span>
+                {project.highlights.map((highlight, idx) => {
+                  const colonIndex = highlight.indexOf(':');
+                  const hasPrefix = colonIndex > 0 && colonIndex < 35;
+                  return (
+                    <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 bg-slate-50/80 p-3 rounded-2xl border border-slate-100">
+                      <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+                      <div className="leading-relaxed">
+                        {hasPrefix ? (
+                          <>
+                            <span className="font-semibold text-slate-900">{highlight.slice(0, colonIndex + 1)}</span>
+                            <span>{highlight.slice(colonIndex + 1)}</span>
+                          </>
+                        ) : (
+                          <span>{highlight}</span>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* System Architecture & Tech Layers */}
+          {project.techLayers && project.techLayers.length > 0 && (
+            <div className="space-y-3 pt-1">
+              <h4 className="text-xs font-mono font-semibold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+                <Layers className="w-3.5 h-3.5 text-indigo-600" />
+                <span>System Architecture & Layer Breakdown</span>
+              </h4>
+              <div className="grid grid-cols-1 gap-2">
+                {project.techLayers.map((layer, idx) => (
+                  <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3 p-3 rounded-2xl bg-white border border-slate-200 shadow-xs">
+                    <span className="px-2.5 py-1 rounded-lg text-xs font-mono font-semibold bg-indigo-50 text-indigo-700 border border-indigo-100 self-start shrink-0">
+                      {layer.layer}
+                    </span>
+                    <span className="text-xs font-mono text-slate-600 flex-1 sm:text-right">
+                      {layer.tech}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Cloud & Infrastructure Deployment */}
+          {project.cloudInfrastructure && project.cloudInfrastructure.length > 0 && (
+            <div className="space-y-3 pt-1">
+              <h4 className="text-xs font-mono font-semibold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+                <Cloud className="w-3.5 h-3.5 text-blue-600" />
+                <span>Cloud & Infrastructure Deployment</span>
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {project.cloudInfrastructure.map((infra, idx) => (
+                  <div key={idx} className="p-3.5 rounded-2xl bg-slate-50/80 border border-slate-100 flex flex-col justify-between gap-1.5">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="font-semibold text-xs text-slate-900 font-mono">{infra.name}</span>
+                      <span className="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-blue-100/80 text-blue-800 border border-blue-200">
+                        {infra.provider}
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      {infra.desc}
+                    </p>
                   </div>
                 ))}
               </div>

@@ -137,23 +137,41 @@ export const portfolioData = {
   projects: [
     {
       id: "falsicode-thesis",
-      title: "FalsiCode: Code Plagiarism Detection in DSA using AST, N-Grams & TF-IDF",
-      tag: "Undergraduate Thesis / NLP & Algorithms",
+      title: "Falsicode: Structural Source Code Plagiarism Detection System",
+      tag: "Undergraduate Thesis • AST & Syntax Engine",
       category: "Thesis",
       period: "2026 – Present",
       status: "In Progress",
       statusNote: "Active Capstone Development & Live Testing",
       featured: true,
-      description: "Undergraduate thesis project at Pamantasan ng Cabuyao: An automated academic source code plagiarism detection system for Data Structures & Algorithms. Combines Abstract Syntax Tree (AST) structural parsing with N-Grams and TF-IDF cosine similarity to detect structural and semantic code plagiarism across student submissions.",
+      description: "An automated, syntax-aware code plagiarism detection platform engineered for Data Structures & Algorithms (DSA) academic submissions in Python and Java. Unlike superficial text matchers that are easily fooled by renamed variables or code rearrangement, Falsicode extracts Abstract Syntax Tree (AST) representations, prunes dead code, normalizes logic structures, and applies token N-Grams with Sublinear TF-IDF vectorization to identify Type 1, Type 2, and Type 3 plagiarism.",
+      goal: "Traditional plagiarism tools rely on surface-level text matching or require sending student source code to external third-party servers. Falsicode solves this by providing a standalone, privacy-preserving academic integrity platform that analyzes the underlying structure and logic of student code rather than just text syntax.",
       highlights: [
-        "Engineered AST static parsing using javalang to detect renamed variables, reordered methods, and disguised code structure.",
-        "Implemented TF-IDF vectorization and N-Grams via Scikit-Learn to compute multi-metric similarity scores.",
-        "Built a responsive full-stack platform deployed live at falsicode.vercel.app with automated PDF report exports (jsPDF) and Docker Compose support.",
+        "AST Structural Analysis: Parses Python (ast) and Java (javalang) source code into Abstract Syntax Trees to normalize token structures, making detection resilient against variable renaming, comment alterations, and formatting tricks.",
+        "Dead-Code Pruning: Eliminates injected decoy functions and uncalled code blocks used to evade traditional detection.",
+        "Asymmetric Code Detection: Employs a dual-scoring mechanism (Cosine Similarity + Containment Metric) to catch small plagiarized algorithm snippets embedded inside larger files.",
+        "Multi-Class Taxonomy: Classifies similarities into Type 1 (verbatim copy), Type 2 (renamed identifiers), and Type 3 (reordered/reworked logic).",
+        "Classroom & LMS Integration: Role-based access control (Instructor, Student, Admin), assignment creation, syntax-validated submissions, interactive visual diffs, and downloadable PDF reports (jsPDF/html2canvas).",
+        "Production Infrastructure: Deployed as a high-performance React 18 SPA on Vercel Edge, containerized Python Flask REST API on Render via Gunicorn WSGI, and Cloud MySQL on Aiven Cloud with SSL/TLS encryption."
       ],
-      techStack: ["Python", "Flask", "Scikit-Learn (TF-IDF)", "AST (javalang)", "React 18", "MySQL", "Docker Compose", "Vercel"],
+      techStack: ["React 18", "Python (Flask 3.x)", "AST (Python & Javalang)", "Scikit-Learn (TF-IDF)", "MySQL 8.0 (Aiven Cloud)", "Docker Compose", "Gunicorn", "Vercel / Render"],
+      techLayers: [
+        { layer: "Frontend", tech: "React 18, React Router v6, Axios, Tailwind CSS, jsPDF & html2canvas" },
+        { layer: "Backend API", tech: "Python 3.9+, Flask 3.x, Gunicorn WSGI, Flask-JWT-Extended, Flask-Bcrypt, Flask-SQLAlchemy" },
+        { layer: "Detection Engine", tech: "Python ast, javalang (Java AST Parser), Scikit-Learn (TfidfVectorizer), NumPy, difflib" },
+        { layer: "Database", tech: "MySQL 8.0 / MariaDB (Relational ORM via SQLAlchemy & Aiven Cloud)" },
+        { layer: "DevOps & Tooling", tech: "Docker, Docker Compose, Git / GitHub, Vercel & Render Continuous Deployment" },
+      ],
+      cloudInfrastructure: [
+        { name: "Frontend Hosting", provider: "Vercel", desc: "Optimized React SPA with global edge CDN delivery and client-side route rewriting." },
+        { name: "Backend API", provider: "Render", desc: "Containerized Python Flask REST API running with production Gunicorn WSGI web servers." },
+        { name: "Cloud Database", provider: "Aiven Cloud", desc: "Fully managed Cloud MySQL 8.0 database cluster with SSL/TLS encryption." },
+        { name: "Email Service", provider: "Gmail SMTP", desc: "Secure OTP (One-Time Password) email delivery for account verification and password recovery." },
+        { name: "Local Lab Support", provider: "Docker Compose", desc: "1-click containerized deployment (API + Client + MySQL + phpMyAdmin) for offline lab evaluation." }
+      ],
       github: "https://github.com/charlesnavalta/Code-Plagiarism-Detection-in-DSA-using-AST-N-Grams-and-TF-IDF",
       demo: "https://falsicode.vercel.app/",
-      stats: { metric: "Live Platform", value: "FalsiCode" }
+      stats: { metric: "Live Platform", value: "Falsicode" }
     },
     {
       id: "debugging-farm-game",
