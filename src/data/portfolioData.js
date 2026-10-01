@@ -13,6 +13,7 @@ export const portfolioData = {
     location: "Cabuyao, Laguna, Philippines",
     isOpenToWork: true,
     statusText: "Open to Full-Time Roles & Opportunities",
+    avatar: "/profile.jpg",
     resumeUrl: "#",
   },
 

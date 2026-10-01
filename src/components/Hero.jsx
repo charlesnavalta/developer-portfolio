@@ -30,6 +30,23 @@ export default function Hero() {
         {/* Hero Main Content */}
         <div className="text-center max-w-4xl mx-auto space-y-5 sm:space-y-6">
 
+          {/* Profile Avatar / Photo */}
+          <div className="relative inline-block mx-auto mb-1">
+            <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full p-1 bg-gradient-to-tr from-blue-600 via-indigo-500 to-sky-400 shadow-xl shadow-blue-500/15 mx-auto ring-4 ring-white">
+              <img
+                src={personal.avatar || "/profile.jpg"}
+                alt={personal.name}
+                className="w-full h-full object-cover object-top rounded-full bg-slate-100"
+              />
+            </div>
+            {personal.isOpenToWork && (
+              <div className="absolute bottom-0 right-0 sm:bottom-1 sm:right-1 bg-white px-2.5 py-0.5 rounded-full border border-slate-200 shadow-md flex items-center gap-1.5 text-[11px] font-mono font-semibold text-emerald-700">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span>Open to Work</span>
+              </div>
+            )}
+          </div>
+
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.2] sm:leading-[1.15]">
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 bg-clip-text text-transparent">{personal.name}</span>
           </h1>
