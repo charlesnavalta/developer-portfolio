@@ -138,11 +138,11 @@ export const portfolioData = {
     {
       id: "falsicode-thesis",
       title: "Falsicode: Structural Source Code Plagiarism Detection System",
-      tag: "Undergraduate Thesis • Code Plagiarism Engine",
+      tag: "Undergraduate Thesis • Code Plagiarism",
       category: "Thesis",
       period: "2026 – Present",
       status: "In Progress",
-      statusNote: "Active Capstone Development & Live Testing",
+      statusNote: "Active Thesis Development",
       featured: true,
       description: "An automated source code plagiarism detection system for Data Structures and Algorithms coursework in Python and Java. Unlike basic text matchers, Falsicode parses Abstract Syntax Trees, prunes dead code, and analyzes logic structures to detect plagiarism even when variables are renamed or code is rearranged.",
       goal: "Provides a standalone, privacy-focused academic integrity platform that inspects the underlying structure and logic of student programs rather than plain text.",
