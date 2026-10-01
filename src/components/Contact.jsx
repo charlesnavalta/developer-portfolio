@@ -73,19 +73,19 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 relative bg-[#f8fafc] border-t border-slate-200/80">
+    <section id="contact" className="py-20 relative bg-[#f8fafc] dark:bg-[#090d16] border-t border-slate-200/80 dark:border-slate-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-mono mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 text-xs font-mono mb-3">
             <Sparkles className="w-3.5 h-3.5" />
             <span>LET'S CONNECT</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-mono">
-            Get In <span className="text-blue-600">Touch</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight font-mono">
+            Get In <span className="text-blue-600 dark:text-blue-400">Touch</span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 mt-2">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
             Interested in discussing entry-level roles, collaborative projects, or tech opportunities? Let's connect!
           </p>
         </div>
@@ -94,37 +94,37 @@ export default function Contact() {
           
           {/* Left Column: Direct Info (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="glass-panel p-6 sm:p-8 rounded-3xl space-y-6 bg-white border border-slate-200 shadow-sm">
-              <h3 className="text-lg font-bold text-slate-900 font-mono">
+            <div className="glass-panel p-6 sm:p-8 rounded-3xl space-y-6">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white font-mono">
                 Contact Information
               </h3>
               
               <div className="space-y-3.5 text-xs sm:text-sm">
                 
                 {/* Email with 1-click copy */}
-                <div className="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
+                <div className="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
                   <div className="flex items-center gap-3">
-                    <Mail className="w-4 h-4 text-blue-600 shrink-0" />
+                    <Mail className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />
                     <div>
-                      <p className="text-[11px] text-slate-500">Email Address</p>
-                      <p className="font-mono text-slate-800 font-medium">{personal.email}</p>
+                      <p className="text-[11px] text-slate-500 dark:text-slate-400">Email Address</p>
+                      <p className="font-mono text-slate-800 dark:text-slate-200 font-medium">{personal.email}</p>
                     </div>
                   </div>
                   <button
                     onClick={handleCopyEmail}
-                    className="p-1.5 rounded-xl bg-white border border-slate-200 hover:bg-slate-100 text-slate-600 transition-colors shadow-xs cursor-pointer"
+                    className="p-1.5 rounded-xl bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-200 transition-colors shadow-xs cursor-pointer"
                     title="Copy Email"
                   >
-                    {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
+                    {copied ? <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> : <Copy className="w-4 h-4" />}
                   </button>
                 </div>
 
                 {/* Location */}
-                <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
-                  <MapPin className="w-4 h-4 text-blue-600 shrink-0" />
+                <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+                  <MapPin className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />
                   <div>
-                    <p className="text-[11px] text-slate-500">Location</p>
-                    <p className="text-slate-800 font-medium">{personal.location}</p>
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400">Location</p>
+                    <p className="text-slate-800 dark:text-slate-200 font-medium">{personal.location}</p>
                   </div>
                 </div>
 
@@ -132,7 +132,7 @@ export default function Contact() {
 
               {/* Social Channels */}
               <div className="pt-2">
-                <p className="text-xs font-mono text-slate-500 mb-3 uppercase tracking-wider">
+                <p className="text-xs font-mono text-slate-500 dark:text-slate-400 mb-3 uppercase tracking-wider">
                   Social & Code Links
                 </p>
                 <div className="flex items-center gap-3">
@@ -140,7 +140,7 @@ export default function Contact() {
                     href={personal.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-blue-400 text-xs font-semibold text-slate-700 shadow-xs transition-all"
+                    className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500 text-xs font-semibold text-slate-700 dark:text-slate-200 shadow-xs transition-all"
                   >
                     <GithubIcon className="w-4 h-4" />
                     <span>GitHub</span>
@@ -150,9 +150,9 @@ export default function Contact() {
                     href={personal.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-blue-400 text-xs font-semibold text-slate-700 shadow-xs transition-all"
+                    className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500 text-xs font-semibold text-slate-700 dark:text-slate-200 shadow-xs transition-all"
                   >
-                    <LinkedinIcon className="w-4 h-4 text-blue-600" />
+                    <LinkedinIcon className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                     <span>LinkedIn</span>
                   </a>
                 </div>
@@ -163,70 +163,70 @@ export default function Contact() {
 
           {/* Right Column: Contact Message Form (7 cols) */}
           <div className="lg:col-span-7">
-            <div className="glass-panel p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm">
+            <div className="glass-panel p-6 sm:p-8 rounded-3xl">
               
               {submitted ? (
                 <div className="py-12 text-center space-y-4 animate-fadeIn">
-                  <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-xs">
+                  <div className="w-14 h-14 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto shadow-xs">
                     <Check className="w-7 h-7" />
                   </div>
                   <div className="space-y-1">
-                    <h3 className="text-xl font-bold text-slate-900 font-mono">Message Sent Successfully!</h3>
-                    <p className="text-xs text-slate-600 max-w-sm mx-auto leading-relaxed">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white font-mono">Message Sent Successfully!</h3>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 max-w-sm mx-auto leading-relaxed">
                       Thank you for reaching out. Your message has been delivered directly to Charles's inbox.
                     </p>
                   </div>
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-mono font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-mono font-medium text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors cursor-pointer"
                   >
                     <span>Send Another Message</span>
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <h3 className="text-lg font-bold text-slate-900 font-mono flex items-center gap-2">
-                    <MessageSquare className="w-4 h-4 text-blue-600" />
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white font-mono flex items-center gap-2">
+                    <MessageSquare className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                     <span>Send a Direct Message</span>
                   </h3>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                      <label className="text-xs font-medium text-slate-700">Your Name</label>
+                      <label className="text-xs font-medium text-slate-700 dark:text-slate-300">Your Name</label>
                       <input
                         type="text"
                         required
                         placeholder="John Doe"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 shadow-xs transition-colors"
+                        className="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-blue-500 shadow-xs transition-colors"
                       />
                     </div>
 
                     <div className="space-y-1">
-                      <label className="text-xs font-medium text-slate-700">Your Email</label>
+                      <label className="text-xs font-medium text-slate-700 dark:text-slate-300">Your Email</label>
                       <input
                         type="email"
                         required
                         placeholder="john@example.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 shadow-xs transition-colors"
+                        className="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-blue-500 shadow-xs transition-colors"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-1.5">
                     <div className="flex items-center justify-between">
-                      <label className="text-xs font-medium text-slate-700">Subject</label>
+                      <label className="text-xs font-medium text-slate-700 dark:text-slate-300">Subject</label>
                       <div className="hidden sm:flex gap-1.5">
                         {["Job Opportunity", "Project Collaboration", "General Inquiry"].map((preset) => (
                           <button
                             key={preset}
                             type="button"
                             onClick={() => setFormData({ ...formData, subject: preset })}
-                            className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-100 hover:bg-blue-50 text-slate-600 hover:text-blue-700 border border-slate-200 hover:border-blue-200 transition-colors cursor-pointer"
+                            className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 hover:bg-blue-50 dark:hover:bg-blue-950/40 text-slate-600 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 border border-slate-200 dark:border-slate-700 hover:border-blue-200 transition-colors cursor-pointer"
                           >
                             {preset}
                           </button>
@@ -239,24 +239,24 @@ export default function Contact() {
                       placeholder="e.g., Job Opportunity / Project Collaboration"
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 shadow-xs transition-colors"
+                      className="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-blue-500 shadow-xs transition-colors"
                     />
                   </div>
 
                   <div className="space-y-1">
-                    <label className="text-xs font-medium text-slate-700">Message</label>
+                    <label className="text-xs font-medium text-slate-700 dark:text-slate-300">Message</label>
                     <textarea
                       required
                       rows={4}
                       placeholder="Hi Charles, I'd like to discuss an opportunity..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 shadow-xs transition-colors resize-none"
+                      className="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-blue-500 shadow-xs transition-colors resize-none"
                     />
                   </div>
 
                   {errorMessage && (
-                    <div className="flex items-center gap-2 p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs">
+                    <div className="flex items-center gap-2 p-3 rounded-xl bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 text-xs">
                       <AlertCircle className="w-4 h-4 shrink-0 text-red-500" />
                       <span>{errorMessage}</span>
                     </div>
@@ -265,7 +265,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-xs text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-75 disabled:cursor-not-allowed shadow-md shadow-blue-500/20 transition-all cursor-pointer font-mono"
+                    className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-xs text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-500 disabled:opacity-75 disabled:cursor-not-allowed shadow-md shadow-blue-500/20 transition-all cursor-pointer font-mono"
                   >
                     {isSubmitting ? (
                       <>
