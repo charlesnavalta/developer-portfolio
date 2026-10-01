@@ -171,31 +171,31 @@ export default function Terminal() {
   const quickCommands = ['help', 'about', 'education', 'thesis', 'projects', 'skills', 'leadership', 'contact', 'cat resume.txt', 'clear'];
 
   return (
-    <section id="terminal" className="py-20 relative bg-white border-t border-slate-200/80">
+    <section id="terminal" className="py-20 relative bg-white dark:bg-[#0b0f19] border-t border-slate-200/80 dark:border-slate-800 transition-colors duration-300">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-mono mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-300 text-xs font-mono mb-3">
             <TerminalIcon className="w-3.5 h-3.5" />
             <span>DEVELOPER EASTER EGG</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-mono">
-            Interactive <span className="text-emerald-600">CS Terminal</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight font-mono">
+            Interactive <span className="text-emerald-600 dark:text-emerald-400">CS Terminal</span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 mt-2">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
             A real-time CLI terminal simulator for recruiters and developers who prefer the command line.
           </p>
         </div>
 
         {/* Quick Command Shortcuts */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
-          <span className="text-xs font-mono text-slate-500">Quick Commands:</span>
+          <span className="text-xs font-mono text-slate-500 dark:text-slate-400">Quick Commands:</span>
           {quickCommands.map((cmd) => (
             <button
               key={cmd}
               onClick={() => handleCommand(cmd)}
-              className="px-2.5 py-1 rounded-lg text-xs font-mono bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400 shadow-sm transition-colors cursor-pointer"
+              className="px-2.5 py-1 rounded-lg text-xs font-mono bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:text-slate-900 dark:hover:text-white shadow-xs transition-all cursor-pointer"
             >
               {cmd}
             </button>
@@ -205,15 +205,15 @@ export default function Terminal() {
         {/* Terminal Window Box */}
         <div 
           onClick={() => inputRef.current?.focus()}
-          className="rounded-3xl overflow-hidden border border-slate-300 shadow-xl bg-[#0f172a] text-slate-100 font-mono text-xs sm:text-sm cursor-text"
+          className="rounded-3xl overflow-hidden border border-slate-300 dark:border-slate-800 shadow-xl bg-[#0f172a] dark:bg-[#070b14] text-slate-100 font-mono text-xs sm:text-sm cursor-text"
         >
           {/* Terminal Title Bar */}
-          <div className="bg-[#1e293b] px-4 py-3 flex items-center justify-between border-b border-slate-700/60 select-none">
+          <div className="bg-[#1e293b] dark:bg-[#0f172a] px-4 py-3 flex items-center justify-between border-b border-slate-700/60 dark:border-slate-800 select-none">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-rose-500" />
               <div className="w-3 h-3 rounded-full bg-amber-500" />
               <div className="w-3 h-3 rounded-full bg-emerald-500" />
-              <span className="ml-2 text-xs text-slate-300 font-mono">charles@cs-workstation:~</span>
+              <span className="ml-2 text-xs text-slate-300 dark:text-slate-300 font-mono">charles@cs-workstation:~</span>
             </div>
             <span className="text-[11px] text-slate-400 font-mono">bash (v5.2)</span>
           </div>

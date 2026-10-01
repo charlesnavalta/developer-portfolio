@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charles Darwin Navalta — CV</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: #0f172a;
+      background: #0b0f19;
+      background-image: 
+        radial-gradient(at 50% 0%, rgba(37, 99, 235, 0.12) 0px, transparent 60%),
+        radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.08) 0px, transparent 50%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      line-height: 1.45;
+      font-size: 13.5px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ============================================================
+       Modern Floating Action Header
+       ============================================================ */
+    .action-bar-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      background: rgba(11, 15, 25, 0.82);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+    }
+
+    .action-bar-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Brand / Identity */
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(99, 102, 241, 0.15));
+      border: 1px solid rgba(96, 165, 250, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #60a5fa;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      box-shadow: 0 0 15px rgba(37, 99, 235, 0.2);
+      transition: all 0.25s ease;
+    }
+
+    .brand-group:hover .brand-icon {
+      border-color: rgba(96, 165, 250, 0.6);
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.35);
+    }
+
+    .brand-details {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .brand-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #f8fafc;
+      letter-spacing: -0.2px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .brand-name .highlight {
+      color: #60a5fa;
+    }
+
+    .badge-cv {
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 2px 7px;
+      border-radius: 6px;
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(96, 165, 250, 0.3);
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    .badge-ats {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 500;
+      color: #94a3b8;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 2px 8px;
+      border-radius: 9999px;
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #10b981;
+      box-shadow: 0 0 8px #10b981;
+    }
+
+    /* Actions Area */
+    .action-buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 12.5px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      border: 1px solid rgba(147, 197, 253, 0.35);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #1d4ed8, #1e40af);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    /* ============================================================
+       Main ATS Resume Document Sheet
+       ============================================================ */
+    .document-viewport {
+      padding: 24px 16px 60px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .resume-sheet {
+      max-width: 820px;
+      width: 100%;
+      background: #ffffff;
+      color: #000000;
+      padding: 50px 60px;
+      border-radius: 8px;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    }
+
+    /* Resume Header */
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .name {
+      font-size: 24px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #000000;
+      margin-bottom: 6px;
+    }
+
+    .contact-info {
+      font-size: 12.5px;
+      color: #000000;
+    }
+
+    .contact-info a {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Section Styling */
+    .section {
+      margin-bottom: 22px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #000000;
+      border-bottom: 1.5px solid #000000;
+      padding-bottom: 3px;
+      margin-bottom: 14px;
+      letter-spacing: 0.3px;
+    }
+
+    /* Summary Paragraph */
+    .summary-text {
+      font-size: 13px;
+      line-height: 1.55;
+      color: #000000;
+      text-align: justify;
+    }
+
+    /* Experience / Projects Items */
+    .entry {
+      margin-bottom: 16px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      margin-bottom: 4px;
+    }
+
+    .role-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #000000;
+    }
+
+    .company-date {
+      font-size: 13px;
+      font-weight: 700;
+      color: #000000;
+      margin-top: 1px;
+    }
+
+    .bullets {
+      list-style-type: disc;
+      margin-left: 20px;
+      margin-top: 6px;
+    }
+
+    .bullets li {
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #000000;
+      margin-bottom: 4px;
+    }
+
+    /* Technical Skills Table */
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+
+    .skills-table tr {
+      vertical-align: top;
+    }
+
+    .skills-table td {
+      padding: 3px 0;
+      line-height: 1.5;
+    }
+
+    .skills-label {
+      font-weight: 700;
+      color: #000000;
+      width: 200px;
+      padding-right: 14px;
+    }
+
+    .skills-content {
+      color: #000000;
+    }
+
+    /* Education Entry */
+    .edu-degree {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #000000;
+    }
+
+    .edu-school {
+      font-size: 13px;
+      color: #000000;
+      margin-top: 2px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .action-bar-inner {
+        padding: 10px 14px;
+      }
+      .badge-ats {
+        display: none;
+      }
+      .resume-sheet {
+        padding: 28px 20px;
+        border-radius: 0;
+      }
+      .skills-label {
+        width: 140px;
+      }
+      .btn span {
+        font-size: 11.5px;
+      }
+      .btn {
+        padding: 6px 10px;
+      }
+    }
+
+    /* ============================================================
+       Print & PDF Export Formatting (Exact 1:1 Clean ATS Document)
+       ============================================================ */
+    @media print {
+      @page {
+        margin: 0.5in 0.6in;
+        size: letter;
+      }
+
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 12px;
+      }
+
+      .action-bar-wrapper {
+        display: none !important;
+      }
+
+      .document-viewport {
+        padding: 0 !important;
+      }
+
+      .resume-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+      }
+
+      .section {
+        margin-bottom: 18px !important;
+      }
+
+      .section-title {
+        font-size: 14px !important;
+        border-bottom: 1.5px solid #000000 !important;
+        margin-bottom: 10px !important;
+      }
+
+      .bullets li {
+        font-size: 11.5px !important;
+        margin-bottom: 3px !important;
+      }
+
+      .skills-table td {
+        font-size: 11.5px !important;
+      }
+
+      a {
+        color: #000000 !important;
+        text-decoration: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Navigation & Print Bar (Hidden in Print) -->
+  <header class="action-bar-wrapper">
+    <div class="action-bar-inner">
+      <a href="/" class="brand-group" title="Return to Portfolio">
+        <div class="brand-icon">&lt;/&gt;</div>
+        <div class="brand-details">
+          <span class="brand-name">Charles Darwin Navalta<span class="highlight">.cs</span></span>
+          <span class="badge-cv">CV</span>
+          <span class="badge-ats"><span class="pulse-dot"></span>ATS Standard</span>
+        </div>
+      </a>
+
+      <div class="action-buttons">
+        <a href="/" class="btn btn-secondary" title="Back to Portfolio Overview">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          <span>Portfolio</span>
+        </a>
+        <button onclick="window.print()" class="btn btn-primary" title="Print or Save PDF">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          <span>Print / PDF</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Document Viewport -->
+  <div class="document-viewport">
+    <!-- Main Plain ATS Resume Sheet -->
+    <main class="resume-sheet">
+
+      <!-- Header -->
+      <header class="header">
+        <h1 class="name">CHARLES DARWIN NAVALTA</h1>
+        <div class="contact-info">
+          Cabuyao, Laguna, Philippines | <a href="mailto:charlesdarwinnavalta@gmail.com">charlesdarwinnavalta@gmail.com</a> | <a href="https://linkedin.com/in/charles-darwin-navalta-a908623b1" target="_blank" rel="noopener noreferrer">LinkedIn</a> | <a href="https://github.com/charlesnavalta" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </header>
+
+      <!-- Professional Summary -->
+      <section class="section">
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="summary-text">
+          Computer Science student and software engineer with a strong foundation in algorithmic problem-solving, backend system architecture, and workflow automation. Lead developer of FalsiCode, an Abstract Syntax Tree (AST) source code plagiarism detection system for academic coursework. Experienced in Python, Java, JavaScript, C#, React.js, Flask, MySQL, and Unity 6 LTS. Proven track record in DOM automation, sensor-driven hardware integration, and containerized deployment, seeking a Software Engineering Internship opportunity.
+        </p>
+      </section>
+
+      <!-- Experience & Projects -->
+      <section class="section">
+        <h2 class="section-title">Experience & Technical Projects</h2>
+
+        <!-- FalsiCode -->
+        <div class="entry">
+          <div class="entry-header">
+            <div class="role-title">Lead Programmer & System Architect — FalsiCode</div>
+            <div class="company-date">Undergraduate Thesis, University of Cabuyao | 2026 – Present</div>
+          </div>
+          <ul class="bullets">
+            <li>Architected and developed an automated source code plagiarism detection system parsing Python and Java Abstract Syntax Trees (AST) to detect structural logic similarity despite renamed variables, decoy code, or rearranged blocks.</li>
+            <li>Engineered full-stack system with a responsive React 18 frontend dashboard, Flask RESTful API backend, SQLAlchemy ORM, and Docker containerization.</li>
+            <li>Implemented dead-code pruning filters and asymmetric cosine similarity algorithms to identify plagiarized algorithm fragments in academic programming submissions.</li>
+          </ul>
+        </div>
+
+        <!-- Debugging Farm -->
+        <div class="entry">
+          <div class="entry-header">
+            <div class="role-title">Junior Gameplay Programmer & QA — Debugging Farm</div>
+            <div class="company-date">Group Yawasap, University of Cabuyao | 2025 – 2026</div>
+          </div>
+          <ul class="bullets">
+            <li>Developed core 2D farming, inventory, crop growth, and stamina mechanics in Unity 6 LTS (C#) using ScriptableObject data architecture and 2D Tilemap physics.</li>
+            <li>Built event-driven game state managers and configured Unity's New Input System for cross-platform PC and mobile touch/gamepad input readiness.</li>
+            <li>Conducted comprehensive gameplay regression testing and fixed state synchronization defects to ensure smooth performance across hardware profiles.</li>
+          </ul>
+        </div>
+
+        <!-- AutoAnswerExt -->
+        <div class="entry">
+          <div class="entry-header">
+            <div class="role-title">Developer — AutoAnswerExt Browser Automation</div>
+            <div class="company-date">Independent Project | 2025 – 2026</div>
+          </div>
+          <ul class="bullets">
+            <li>Engineered a Manifest V3 Chrome extension utilizing JavaScript DOM tree traversal and mutation observers to automate question identification and answer retrieval.</li>
+            <li>Optimized background service worker execution to achieve sub-50ms query processing times without impacting web page responsiveness.</li>
+          </ul>
+        </div>
+
+        <!-- BinBot -->
+        <div class="entry">
+          <div class="entry-header">
+            <div class="role-title">Head Production & Lead Hardware Integration — BinBot</div>
+            <div class="company-date">NSTP Civic Welfare Training Service (CWTS) | 2023 – 2024</div>
+          </div>
+          <ul class="bullets">
+            <li>Designed and built an Arduino-powered automated waste segregation system utilizing ultrasonic proximity and inductive metal sensors; recognized as <em>Best Technical Community Project</em>.</li>
+            <li>Led the hardware production team, calibrated sensor thresholds, and authored technical documentation and operating manuals.</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- Technical Skills -->
+      <section class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <table class="skills-table">
+          <tbody>
+            <tr>
+              <td class="skills-label">Programming Languages:</td>
+              <td class="skills-content">Java, Python, JavaScript (ES6+), C# / .NET, SQL (MySQL), HTML5, CSS3</td>
+            </tr>
+            <tr>
+              <td class="skills-label">Web & Backend Technologies:</td>
+              <td class="skills-content">React.js, Flask, Tailwind CSS, RESTful APIs, SQLAlchemy ORM, Bootstrap</td>
+            </tr>
+            <tr>
+              <td class="skills-label">Development Tools & Systems:</td>
+              <td class="skills-content">Unity 6 LTS, Docker, Git, GitHub, Visual Studio Code, Chrome Extension API (Manifest V3), Arduino IDE</td>
+            </tr>
+            <tr>
+              <td class="skills-label">Methodologies & Core CS:</td>
+              <td class="skills-content">Data Structures & Algorithms, Object-Oriented Programming (OOP), AST Code Analysis, Natural Language Processing (NLP), Scikit-Learn, Software Development Life Cycle (SDLC)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Education -->
+      <section class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="entry">
+          <div class="edu-degree">Bachelor of Science in Computer Science</div>
+          <div class="edu-school">University of Cabuyao (Pamantasan ng Cabuyao) | 2023 – Present (Class of 2027)</div>
+        </div>
+        <div class="entry" style="margin-top: 10px;">
+          <div class="edu-degree">Technical-Vocational-Livelihood (TVL) — Information & Communication Technology</div>
+          <div class="edu-school">Cabuyao Institute of Technology | 2021 – 2023</div>
+        </div>
+      </section>
+
+      <!-- Leadership & Organizations -->
+      <section class="section">
+        <h2 class="section-title">Leadership & Organizations</h2>
+        <ul class="bullets" style="margin-left: 18px;">
+          <li><strong>Member</strong> — Association of Computer Science Students (ACSS), University of Cabuyao (2023 – Present)</li>
+          <li><strong>Member</strong> — AWS Cloud Club, University of Cabuyao (2024 – 2025)</li>
+          <li><strong>Head Production</strong> — NSTP Civic Welfare Training Service (CWTS), University of Cabuyao (2023 – 2024)</li>
+          <li><strong>Class Auditor</strong> — Senior High Student Council, Cabuyao Institute of Technology (2022 – 2023)</li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>

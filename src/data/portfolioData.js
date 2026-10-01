@@ -14,7 +14,7 @@ export const portfolioData = {
     isOpenToWork: true,
     statusText: "Open to Internship Opportunities",
     avatar: "/avatar-nobg.png",
-    resumeUrl: "#",
+    resumeUrl: "/resume.html",
   },
 
   education: {
